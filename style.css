@@ -114,6 +114,7 @@ span {
 
 .skills {
   padding: 1.2rem 0;
+  max-width: 90%;
 }
 
 .home-content h3:nth-of-type(2) {
