@@ -34,7 +34,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  padding: 2rem 9%;
+  padding: 1rem 9%;
   background: var(--bg-color);
   display: flex;
   justify-content: space-between;
@@ -51,11 +51,8 @@ section {
   padding: 10rem 9% 2rem;
 }
 
-.logo {
-  font-size: 2.5rem;
-  color: var(--text-color);
-  font-weight: 600;
-  cursor: default;
+.logo img {
+  width: 200px;
 }
 
 .navbar ul {
@@ -87,7 +84,7 @@ section {
 }
 
 .home-img img {
-  width: 25vw;
+  width: 18vw;
   animation: floatImage 4s ease-in-out infinite;
 }
 
@@ -178,7 +175,7 @@ span {
 }
 
 .about-img img {
-  width: 25vw;
+  width: 20vw;
 }
 
 .heading {
@@ -276,45 +273,15 @@ span {
   color: var(--text-color);
 }
 
-.contact h2 {
-  margin-bottom: 3rem;
-}
-
-.contact form {
-  max-width: 70rem;
-  margin: 1rem auto;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.contact form .input-item {
+.contact {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.contact form .input-item input,
-.contact form textarea {
-  width: 100%;
-  padding: 1.5rem;
-  font-size: 1.6rem;
-  color: var(--text-color);
-  background: var(--second-bg-color);
-  border-radius: 0.8rem;
-  margin: 0.7rem 0;
-}
-
-.contact form .input-item input {
-  width: 49%;
-}
-
-.contact form textarea {
-  resize: none;
-}
-
-.contact form .btn {
-  margin-top: 2rem;
-  cursor: pointer;
+.contact .social-media a {
+  margin: 10px;
 }
 
 .footer {
