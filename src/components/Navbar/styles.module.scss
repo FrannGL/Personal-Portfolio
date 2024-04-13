@@ -1,0 +1,21 @@
+@import "@/styles/theme.scss";
+
+.container {
+	@include width-height(100%, auto);
+	@include flex(row, space-evenly, center);
+	flex-wrap: nowrap;
+	padding: 5px 20px;
+	background: $main;
+	transition: all 300ms ease-in-out;
+	.logo {
+		@include width-height(150px, 60px);
+		object-fit: contain;
+		cursor: pointer;
+	}
+	.btn {
+		border: none;
+		background: none;
+		cursor: pointer;
+		transition: all 300ms ease-in-out;
+	}
+}
