@@ -1,5 +1,5 @@
 const BurgerMenuIcon = () => (
-	<svg width={32} height={32} fill='none' viewBox='0 0 24 24'>
+	<svg width={40} height={40} fill='none' viewBox='0 0 24 24'>
 		<path
 			fill='#16c0f0'
 			fillRule='evenodd'
