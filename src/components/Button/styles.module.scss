@@ -1,0 +1,14 @@
+@import "@/styles/theme.scss";
+
+.main {
+	@include main-btn;
+}
+
+.second {
+	@extend .main;
+	background: transparent;
+	border: 2px solid $second;
+	&:hover {
+		background: $second;
+	}
+}
