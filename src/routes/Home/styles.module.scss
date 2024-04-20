@@ -7,11 +7,10 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center top;
-	position: relative;
 	&::before {
 		content: "";
 		position: absolute;
-		top: 0;
+		top: 74px;
 		right: 0;
 		bottom: 0;
 		left: 0;
@@ -42,30 +41,37 @@
 	.btn_container {
 		@include width-height(100%, auto);
 		@include flex(row, center, center, 30px);
-		position: relative;
 		z-index: 2;
 	}
 	.socials {
-		@include flex(column, center, flex-start, 50px);
+		@include width-height(auto, 400px);
 		z-index: 2;
 		position: absolute;
-		left: 0;
+		top: 30%;
+		left: 70px;
 		.content {
-			@include width-height(80px, auto);
-			@include flex(column, center, center, 50px);
+			@include width-height(80px, 100%);
+			@include flex(column, center, center, 20px);
+			position: relative;
 			.title {
-				@include width-height(150px, auto);
+				@include width-height(305px, auto);
 				@include fontSize-fontWeight(16px, 400);
 				transform: rotate(90deg);
 				text-transform: uppercase;
 				color: $white;
+				position: absolute;
 			}
 			.line {
 				@include width-height(2px, 50px);
 				background: $second;
+				position: absolute;
 			}
 			.list {
+				@include width-height(auto, 140px);
 				@include flex(column, center, center, 20px);
+				position: absolute;
+				bottom: 0;
+				right: 28px;
 				.item {
 					.link {
 						svg {
@@ -87,5 +93,10 @@
 				}
 			}
 		}
+	}
+	.list {
+		z-index: 2;
+		position: absolute;
+		right: 50px;
 	}
 }

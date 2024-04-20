@@ -1,0 +1,34 @@
+@import "@/styles/theme.scss";
+
+.container {
+	@include flex(column, center, center, 20px);
+	.list {
+		color: $white;
+		.link {
+			@include width-height(92px, auto);
+			@include flex(row, space-between, center, 10px);
+			padding: 0 5px;
+			.circle {
+				@include width-height(12px, 12px);
+				border-radius: 50px;
+				background-color: $second;
+			}
+			.hidden {
+				background: transparent;
+				border: 2px solid $second;
+			}
+			.title {
+				@include fontSize-fontWeight(14px, 600);
+				visibility: hidden;
+				color: $white;
+				transition: all 200ms ease-in-out;
+			}
+			&:hover {
+				.title {
+					visibility: visible;
+					display: block;
+				}
+			}
+		}
+	}
+}

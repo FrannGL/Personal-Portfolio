@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.scss";
 import Button from "@/components/Button";
+import ListRoutes from "@/components/ListRoutes";
 import Link from "next/link";
 import Typed from "typed.js";
 import { Fade } from "react-awesome-reveal";
@@ -60,37 +61,42 @@ const HomePage = () => {
 					</Link>
 				</div>
 			</Fade>
-			<div className={styles.socials}>
-				<div className={styles.content}>
-					<h2 className={styles.title}>Follow me</h2>
-					<div className={styles.line}></div>
-					<ul className={styles.list}>
-						<li className={styles.item}>
-							<Link className={styles.link} href={"https://www.facebook.com/franco.galluccio"} target='_blank'>
-								<FacebookIcon />
-							</Link>
-						</li>
-						<li className={styles.item}>
-							<Link className={styles.link} href={"https://www.instagram.com/fraaaangl/"} target='_blank'>
-								<InstagramIcon />
-							</Link>
-						</li>
-						<li className={styles.item}>
-							<Link className={styles.link} href={"https://github.com/FrannGL"} target='_blank'>
-								<GithubIcon />
-							</Link>
-						</li>
-						<li className={styles.item}>
-							<Link
-								className={styles.link}
-								href={"https://www.linkedin.com/in/franco-ivan-galluccio-553b1224a/"}
-								target='_blank'
-							>
-								<LinkedinIcon />
-							</Link>
-						</li>
-					</ul>
+			<Fade>
+				<div className={styles.socials}>
+					<div className={styles.content}>
+						<h2 className={styles.title}>Follow me</h2>
+						<div className={styles.line}></div>
+						<ul className={styles.list}>
+							<li className={styles.item}>
+								<Link className={styles.link} href={"https://www.facebook.com/franco.galluccio"} target='_blank'>
+									<FacebookIcon />
+								</Link>
+							</li>
+							<li className={styles.item}>
+								<Link className={styles.link} href={"https://www.instagram.com/fraaaangl/"} target='_blank'>
+									<InstagramIcon />
+								</Link>
+							</li>
+							<li className={styles.item}>
+								<Link className={styles.link} href={"https://github.com/FrannGL"} target='_blank'>
+									<GithubIcon />
+								</Link>
+							</li>
+							<li className={styles.item}>
+								<Link
+									className={styles.link}
+									href={"https://www.linkedin.com/in/franco-ivan-galluccio-553b1224a/"}
+									target='_blank'
+								>
+									<LinkedinIcon />
+								</Link>
+							</li>
+						</ul>
+					</div>
 				</div>
+			</Fade>
+			<div className={styles.list}>
+				<ListRoutes />
 			</div>
 		</section>
 	);
