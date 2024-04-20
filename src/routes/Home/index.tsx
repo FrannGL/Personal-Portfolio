@@ -44,14 +44,16 @@ const HomePage = () => {
 					</Fade>
 				</div>
 			</Fade>
-			<div className={styles.btn_container}>
-				<Link href={"https://www.linkedin.com/in/franco-ivan-galluccio-553b1224a/"} target='_blank'>
-					<Button title='Hire me' styleName='main' />
-				</Link>
-				<Link href={"assets/CV FRANCO IVAN GALLUCCIO.pdf"} target='_blank'>
-					<Button title='Download CV' styleName='second' />
-				</Link>
-			</div>
+			<Fade cascade damping={0.1}>
+				<div className={styles.btn_container}>
+					<Link href={"https://www.linkedin.com/in/franco-ivan-galluccio-553b1224a/"} target='_blank'>
+						<Button title='Hire me' styleName='main' />
+					</Link>
+					<Link href={"assets/CV FRANCO IVAN GALLUCCIO.pdf"} target='_blank'>
+						<Button title='Download CV' styleName='second' />
+					</Link>
+				</div>
+			</Fade>
 		</section>
 	);
 };
