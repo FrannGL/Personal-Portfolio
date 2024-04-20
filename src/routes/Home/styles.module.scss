@@ -7,10 +7,11 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center top;
+	position: relative;
 	&::before {
 		content: "";
 		position: absolute;
-		top: 74px;
+		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
@@ -26,7 +27,7 @@
 			@include fontSize-fontWeight(80px, 800);
 		}
 		.subtitle {
-			@include width-height(450px, auto);
+			@include width-height(490px, auto);
 			@include fontSize-fontWeight(30px, 400);
 			position: absolute;
 			bottom: 0;
@@ -41,6 +42,50 @@
 	.btn_container {
 		@include width-height(100%, auto);
 		@include flex(row, center, center, 30px);
+		position: relative;
 		z-index: 2;
+	}
+	.socials {
+		@include flex(column, center, flex-start, 50px);
+		z-index: 2;
+		position: absolute;
+		left: 0;
+		.content {
+			@include width-height(80px, auto);
+			@include flex(column, center, center, 50px);
+			.title {
+				@include width-height(150px, auto);
+				@include fontSize-fontWeight(16px, 400);
+				transform: rotate(90deg);
+				text-transform: uppercase;
+				color: $white;
+			}
+			.line {
+				@include width-height(2px, 50px);
+				background: $second;
+			}
+			.list {
+				@include flex(column, center, center, 20px);
+				.item {
+					.link {
+						svg {
+							transition: all 200ms ease-in-out;
+							path[stroke="#fff"] {
+								stroke: $second;
+							}
+							path[fill="#FF5722"] {
+								fill: $text;
+							}
+							&:hover {
+								transform: scale(1.2);
+								path[fill="#fff"] {
+									fill: $second;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

@@ -1,35 +1,38 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.scss";
-import useTypewriter from "react-typewriter-hook";
 import Button from "@/components/Button";
-import { Fade } from "react-awesome-reveal";
 import Link from "next/link";
-
-const titles = ["Frontend Developer.", "Backend Developer.", "Fullstack Developer."];
-const initialWord = "I am a";
-const Words = titles.map(title => `${initialWord} ${title}`);
+import Typed from "typed.js";
+import { Fade } from "react-awesome-reveal";
+import LinkedinIcon from "@/components/Icons/Linkedin";
+import FacebookIcon from "@/components/Icons/Facebook";
+import InstagramIcon from "@/components/Icons/Instagram";
+import GithubIcon from "@/components/Icons/Github";
 
 const HomePage = () => {
-	const [magicName, setMagicName] = useState(Words[0]);
-	const [index, setIndex] = useState(0);
-
-	const intervalRef = useRef<any>(null);
-	const name = useTypewriter(magicName);
+	const [text, setText] = useState("");
+	const element = useRef<HTMLSpanElement>(null);
 
 	useEffect(() => {
-		intervalRef.current = setInterval(() => {
-			setIndex(prevIndex => (prevIndex >= Words.length - 1 ? 0 : prevIndex + 1));
-			setMagicName(Words[index]);
-		}, 6000);
-		return () => {
-			if (intervalRef.current) {
-				clearInterval(intervalRef.current);
-			}
-		};
-	}, [index]);
+		const typed = new Typed(element.current, {
+			strings: ["Frontend Developer", "Backend Developer", "Fullstack Developer"],
+			typeSpeed: 75,
+			backSpeed: 75,
+			loop: true,
+			loopCount: 5,
+		});
 
-	const firstPart = name?.slice(0, 6);
-	const secondPart = name?.slice(6);
+		return () => {
+			typed.destroy();
+		};
+	}, []);
+
+	useEffect(() => {
+		setText(element.current?.textContent || "");
+	}, []);
+
+	const firstPart = text?.slice(0, 6);
+	const secondPart = text?.slice(6);
 
 	return (
 		<section className={styles.container}>
@@ -38,8 +41,11 @@ const HomePage = () => {
 					<h1 className={styles.title}>Franco Galluccio</h1>
 					<Fade cascade delay={200}>
 						<h2 className={styles.subtitle}>
-							<span className={styles.initial}>{firstPart}</span>
-							<span className={styles.content}>{secondPart}</span>
+							{"<"} I am a <span ref={element}>{firstPart}</span>
+							<span ref={element} className={styles.content}>
+								{secondPart}
+							</span>{" "}
+							{"/>"}
 						</h2>
 					</Fade>
 				</div>
@@ -54,6 +60,38 @@ const HomePage = () => {
 					</Link>
 				</div>
 			</Fade>
+			<div className={styles.socials}>
+				<div className={styles.content}>
+					<h2 className={styles.title}>Follow me</h2>
+					<div className={styles.line}></div>
+					<ul className={styles.list}>
+						<li className={styles.item}>
+							<Link className={styles.link} href={"https://www.facebook.com/franco.galluccio"} target='_blank'>
+								<FacebookIcon />
+							</Link>
+						</li>
+						<li className={styles.item}>
+							<Link className={styles.link} href={"https://www.instagram.com/fraaaangl/"} target='_blank'>
+								<InstagramIcon />
+							</Link>
+						</li>
+						<li className={styles.item}>
+							<Link className={styles.link} href={"https://github.com/FrannGL"} target='_blank'>
+								<GithubIcon />
+							</Link>
+						</li>
+						<li className={styles.item}>
+							<Link
+								className={styles.link}
+								href={"https://www.linkedin.com/in/franco-ivan-galluccio-553b1224a/"}
+								target='_blank'
+							>
+								<LinkedinIcon />
+							</Link>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</section>
 	);
 };
