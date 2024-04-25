@@ -31,12 +31,13 @@
 	}
 }
 
-.children_container::-webkit-scrollbar {
-	width: 5px;
-	background-color: $lighterGrey;
+.children_container {
+	-webkit-overflow-scrolling: touch;
+	overflow-y: scroll;
+	scrollbar-width: none; /* Para Firefox */
 }
 
-.children_container::-webkit-scrollbar-thumb {
-	background-color: $orange;
-	border-radius: 10px;
+/* Ocultar la barra para navegadores WebKit */
+.children_container::-webkit-scrollbar {
+	display: none;
 }

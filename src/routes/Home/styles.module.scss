@@ -1,7 +1,7 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include width-height(100%, 100%);
+	@include width-height(100%, calc(100vh - 74px));
 	@include flex(column, center, center, 50px);
 	background-image: url("/assets/background.jpg");
 	background-size: cover;

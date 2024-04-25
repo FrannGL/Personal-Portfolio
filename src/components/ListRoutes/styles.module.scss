@@ -5,7 +5,7 @@
 	.list {
 		color: $white;
 		.link {
-			@include width-height(92px, auto);
+			@include width-height(95px, auto);
 			@include flex(row, space-between, center, 10px);
 			padding: 0 5px;
 			.circle {

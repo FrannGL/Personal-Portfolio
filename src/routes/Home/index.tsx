@@ -36,7 +36,7 @@ const HomePage = () => {
 	const secondPart = text?.slice(6);
 
 	return (
-		<section className={styles.container}>
+		<section className={styles.container} id='home'>
 			<Fade delay={200}>
 				<div className={styles.names}>
 					<h1 className={styles.title}>Franco Galluccio</h1>
