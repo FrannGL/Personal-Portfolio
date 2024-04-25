@@ -25,7 +25,7 @@ const Navbar = ({ isOpen, setIsOpen }: LayoutProps) => {
 	return (
 		<nav className={styles.container}>
 			<Link href='/'>
-				<Image src={logo} alt='Small' className={styles.logo} width={150} height={60} priority />
+				<Image src={logo} alt='logo' className={styles.logo} width={150} height={60} priority />
 			</Link>
 			<LangDrop />
 			<Fade key={isVisible.toString()} direction='right' delay={200}>

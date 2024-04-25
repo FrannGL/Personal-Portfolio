@@ -1,6 +1,102 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include flex(column, flex-start, flex-start);
-	padding: 0px 40px;
+	@include width-height(100%, calc(100vh - 74px));
+	@include flex(column, center, center, 50px);
+	background-image: url("/assets/background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 74px;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+	.names {
+		@include width-height(auto, 150px);
+		@include flex(column, space-between, center);
+		z-index: 2;
+		position: relative;
+		.title {
+			color: $white;
+			@include fontSize-fontWeight(80px, 800);
+		}
+		.subtitle {
+			@include width-height(490px, auto);
+			@include fontSize-fontWeight(30px, 400);
+			position: absolute;
+			bottom: 0;
+			transform: translateX(-50%);
+			color: $white;
+			.content {
+				font-weight: 600;
+				color: $second;
+			}
+		}
+	}
+	.btn_container {
+		@include width-height(100%, auto);
+		@include flex(row, center, center, 30px);
+		z-index: 2;
+	}
+	.socials {
+		@include width-height(auto, 400px);
+		z-index: 2;
+		position: absolute;
+		top: 30%;
+		left: 70px;
+		.content {
+			@include width-height(80px, 100%);
+			@include flex(column, center, center, 20px);
+			position: relative;
+			.title {
+				@include width-height(305px, auto);
+				@include fontSize-fontWeight(16px, 400);
+				transform: rotate(90deg);
+				text-transform: uppercase;
+				color: $white;
+				position: absolute;
+			}
+			.line {
+				@include width-height(2px, 50px);
+				background: $second;
+				position: absolute;
+			}
+			.list {
+				@include width-height(auto, 140px);
+				@include flex(column, center, center, 20px);
+				position: absolute;
+				bottom: 0;
+				right: 28px;
+				.item {
+					.link {
+						svg {
+							transition: all 200ms ease-in-out;
+							path[stroke="#fff"] {
+								stroke: $second;
+							}
+							path[fill="#FF5722"] {
+								fill: $text;
+							}
+							&:hover {
+								transform: scale(1.2);
+								path[fill="#fff"] {
+									fill: $second;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.list {
+		z-index: 2;
+		position: absolute;
+		right: 50px;
+	}
 }

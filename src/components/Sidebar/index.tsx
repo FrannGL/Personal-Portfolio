@@ -21,32 +21,32 @@ const Sidebar = ({ isOpen }: LayoutProps) => {
 		{
 			title: `Home`,
 			icon: <HomeIcon />,
-			path: "/",
+			path: "#home",
 		},
 		{
 			title: `About`,
 			icon: <AboutIcon />,
-			path: "/about",
+			path: "#about",
 		},
 		{
 			title: `Services`,
 			icon: <ServicesIcon />,
-			path: "/services",
+			path: "#services",
 		},
 		{
 			title: `Resume`,
 			icon: <ResumeIcon />,
-			path: "/resume",
+			path: "#resume",
 		},
 		{
 			title: `Portfolio`,
 			icon: <PortfolioIcon />,
-			path: "/portfolio",
+			path: "#portfolio",
 		},
 		{
 			title: `Contact`,
 			icon: <ContactIcon />,
-			path: "/contact",
+			path: "#contact",
 		},
 	];
 
