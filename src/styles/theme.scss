@@ -7,7 +7,7 @@ $second: #16c0f0;
 $lighterGrey: #bebebe;
 $lightGrey: #7f7f7f;
 $opacityGrey: rgba(127, 127, 127, 0.7);
-$text: #381d2a;
+$text: #c7c5c7;
 
 $blue: rgb(22, 22, 165);
 $error: rgb(168, 7, 7);
@@ -36,6 +36,15 @@ $queryXl: 1400px;
 @mixin fontSize-fontWeight($size, $weight) {
 	font-size: $size;
 	font-weight: $weight;
+}
+
+@mixin text() {
+	color: $text;
+	line-height: 1.8;
+	font-weight: 400;
+	padding-bottom: 25px;
+	margin-bottom: 0;
+	letter-spacing: 0.3px;
 }
 
 @mixin main-btn() {

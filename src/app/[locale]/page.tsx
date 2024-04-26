@@ -8,6 +8,7 @@ import Resume from "@/routes/Resume";
 import Portfolio from "@/routes/Portfolio";
 import Contact from "@/routes/Contact";
 import { useEffect, useState } from "react";
+import ListRoutes from "@/components/ListRoutes";
 
 const sections = ["home", "about", "services", "resume", "portfolio", "contact"];
 export default function Home() {
@@ -46,14 +47,19 @@ export default function Home() {
 	return (
 		<MainLayout>
 			{sections.map(section => (
-				<div className={styles.container} id={section} key={section}>
-					{section === "home" && <HomePage />}
-					{section === "about" && <About />}
-					{section === "services" && <Services />}
-					{section === "resume" && <Resume />}
-					{section === "portfolio" && <Portfolio />}
-					{section === "contact" && <Contact />}
-				</div>
+				<>
+					<div className={styles.container} id={section} key={section}>
+						{section === "home" && <HomePage />}
+						{section === "about" && <About />}
+						{section === "services" && <Services />}
+						{section === "resume" && <Resume />}
+						{section === "portfolio" && <Portfolio />}
+						{section === "contact" && <Contact />}
+					</div>
+					<div className={styles.list}>
+						<ListRoutes />
+					</div>
+				</>
 			))}
 		</MainLayout>
 	);
