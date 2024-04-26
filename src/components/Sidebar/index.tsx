@@ -1,5 +1,4 @@
 import styles from "./styles.module.scss";
-import { LayoutProps } from "@/app/[locale]/(portfolio)/layout";
 import logo from "/public/assets/logo.png";
 import ResumeIcon from "../Icons/Resume";
 import AboutIcon from "../Icons/About";
@@ -9,6 +8,7 @@ import PortfolioIcon from "../Icons/Portfolio";
 import ServicesIcon from "../Icons/Services";
 import Card from "./Card";
 import Image from "next/image";
+import { useLayout } from "@/context/LayoutContext";
 
 export interface SidebarProps {
 	title: string;
@@ -16,7 +16,9 @@ export interface SidebarProps {
 	path: string;
 }
 
-const Sidebar = ({ isOpen }: LayoutProps) => {
+const Sidebar = () => {
+	const { isOpen } = useLayout();
+
 	const sidebar: Array<SidebarProps> = [
 		{
 			title: `Home`,

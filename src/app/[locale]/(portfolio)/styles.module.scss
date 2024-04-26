@@ -4,40 +4,8 @@
 	@include width-height(100%, 100vh);
 	min-height: 100vh;
 	.inner_container {
-		@include width-height(100%, calc(100% - 74px));
+		@include width-height(100%, 100%);
 		@include flex(row, space-between, flex-start);
 		flex-wrap: nowrap;
-		.children_container {
-			@include width-height(calc(100vw - 275px), calc(100vh - 74px));
-			@include flex(column, flex-start, center);
-			overflow-y: auto;
-			transition: all 400ms ease-in-out;
-			&::before {
-				content: "";
-				position: absolute;
-				top: 73px;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				background-color: rgba(0, 0, 0, 0.61);
-			}
-		}
-		.children_container_closed {
-			width: calc(100vw - 60px);
-			&::before {
-				content: none;
-			}
-		}
 	}
-}
-
-.children_container {
-	-webkit-overflow-scrolling: touch;
-	overflow-y: scroll;
-	scrollbar-width: none; /* Para Firefox */
-}
-
-/* Ocultar la barra para navegadores WebKit */
-.children_container::-webkit-scrollbar {
-	display: none;
 }

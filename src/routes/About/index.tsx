@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Image from "next/image";
 import Button from "@/components/Button";
 import { Fade } from "react-awesome-reveal";
+import Title from "@/components/Title";
 
 const About = () => {
 	return (
@@ -16,9 +17,7 @@ const About = () => {
 				</Fade>
 				<div className={styles.about_container}>
 					<Fade>
-						<div className={styles.title_container}>
-							<h2 className={styles.title}>ABOUT ME</h2>
-						</div>
+						<Title title='ABOUT ME' />
 						<div className={styles.content}>
 							<div className={styles.names}>
 								<Fade direction='down'>

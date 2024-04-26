@@ -2,10 +2,10 @@
 
 .container,
 .container_noselected {
+	@include width-height(275px, auto);
 	@include flex(row, flex-start, center, 20px);
-	@include width-height(265px, auto);
 	background-color: $main;
-	padding: 20px 5px;
+	padding: 20px 15px;
 	transition: all 100ms ease-in;
 	border-top: 1px solid $mainHover;
 	border-bottom: 1px solid $mainHover;
