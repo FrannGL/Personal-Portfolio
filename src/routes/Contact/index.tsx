@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 
+
 const Contact = () => {
 	return (
 		<div className={styles.container}>
@@ -7,5 +8,4 @@ const Contact = () => {
 		</div>
 	);
 };
-
 export default Contact;

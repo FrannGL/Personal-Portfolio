@@ -95,9 +95,6 @@ const HomePage = () => {
 					</div>
 				</div>
 			</Fade>
-			<div className={styles.list}>
-				<ListRoutes />
-			</div>
 		</section>
 	);
 };

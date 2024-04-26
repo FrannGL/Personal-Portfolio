@@ -3,4 +3,5 @@
 .container {
 	@include width-height(100%, calc(100vh - 74px));
 	@include flex(column, center, center);
+	background: $main;
 }
