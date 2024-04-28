@@ -37,12 +37,16 @@ const ListRoutes = () => {
 		},
 	];
 
+	const handleActiveRoute = (path: string) => {
+		setRouteName(path);
+	};
+
 	return (
 		<Fade>
 			<ul className={styles.container}>
 				{routes.map((route, index) => (
 					<li key={index} className={styles.list}>
-						<Link href={route.path} className={styles.link} onClick={() => setRouteName(`${route.path}`)}>
+						<Link href={route.path} className={styles.link} onClick={() => handleActiveRoute(route.path)}>
 							<p className={styles.title}>{route.title}</p>
 							<div className={routeName === route.path ? styles.circle : `${styles.circle} ${styles.hidden}`}></div>
 						</Link>

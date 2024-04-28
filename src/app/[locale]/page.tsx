@@ -46,21 +46,19 @@ export default function Home() {
 
 	return (
 		<MainLayout>
-			{sections.map(section => (
-				<>
-					<div className={styles.container} id={section} key={section}>
-						{section === "home" && <HomePage />}
-						{section === "about" && <About />}
-						{section === "services" && <Services />}
-						{section === "resume" && <Resume />}
-						{section === "portfolio" && <Portfolio />}
-						{section === "contact" && <Contact />}
-					</div>
-					<div className={styles.list}>
-						<ListRoutes />
-					</div>
-				</>
+			{sections.map((section, index) => (
+				<div className={styles.container} id={section} key={`${section}-${index}`}>
+					{section === "home" && <HomePage />}
+					{section === "about" && <About />}
+					{section === "services" && <Services />}
+					{section === "resume" && <Resume />}
+					{section === "portfolio" && <Portfolio />}
+					{section === "contact" && <Contact />}
+				</div>
 			))}
+			<div className={styles.list}>
+				<ListRoutes />
+			</div>
 		</MainLayout>
 	);
 }
