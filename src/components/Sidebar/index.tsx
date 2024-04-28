@@ -17,40 +17,7 @@ export interface SidebarProps {
 }
 
 const Sidebar = () => {
-	const { isOpen } = useLayout();
-
-	const sidebar: Array<SidebarProps> = [
-		{
-			title: `Home`,
-			icon: <HomeIcon />,
-			path: "#home",
-		},
-		{
-			title: `About`,
-			icon: <AboutIcon />,
-			path: "#about",
-		},
-		{
-			title: `Services`,
-			icon: <ServicesIcon />,
-			path: "#services",
-		},
-		{
-			title: `Resume`,
-			icon: <ResumeIcon />,
-			path: "#resume",
-		},
-		{
-			title: `Portfolio`,
-			icon: <PortfolioIcon />,
-			path: "#portfolio",
-		},
-		{
-			title: `Contact`,
-			icon: <ContactIcon />,
-			path: "#contact",
-		},
-	];
+	const { isOpen, routes } = useLayout();
 
 	return (
 		<section className={isOpen ? `${styles.container}` : `${styles.container} ${styles.container_closed}`}>
@@ -58,7 +25,7 @@ const Sidebar = () => {
 			<div
 				className={isOpen ? `${styles.cards_container}` : `${styles.cards_container} ${styles.cards_container_closed}`}
 			>
-				{sidebar.map(card => (
+				{routes.map(card => (
 					<Card key={card.title} title={card.title} path={card.path} icon={card.icon} />
 				))}
 			</div>

@@ -3,28 +3,28 @@
 .container,
 .container_noselected {
 	@include width-height(275px, auto);
-	@include flex(row, flex-start, center, 20px);
+	@include flex(row, flex-start, center, 25px);
 	background-color: $main;
 	padding: 20px 15px;
 	transition: all 100ms ease-in;
 	border-top: 1px solid $mainHover;
 	border-bottom: 1px solid $mainHover;
+	padding-left: 25px;
 	.text {
 		@include fontSize-fontWeight(18px, 400);
 		color: $white;
 		text-align: start;
 	}
-	svg {
-		path[stroke="#FF5722"] {
-			stroke: $text;
-		}
-		path[fill="#FF5722"] {
-			fill: $text;
-		}
-	}
 	&:hover {
 		border-left: 2px solid $second;
 		border-radius: 0 4px 4px 0;
+	}
+	svg {
+		&:hover {
+			path[fill="#fff"] {
+				fill: $second;
+			}
+		}
 	}
 }
 
@@ -33,4 +33,9 @@
 	background-color: $mainHover;
 	border-left: 2px solid $second;
 	border-radius: 0 4px 4px 0;
+	svg {
+		path[fill="#fff"] {
+			fill: $second;
+		}
+	}
 }

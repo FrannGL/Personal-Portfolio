@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 import { Fade } from "react-awesome-reveal";
-import { useState } from "react";
+import { useLayout } from "@/context/LayoutContext";
 
 interface ListRoutesProps {
 	title: string;
@@ -9,33 +9,7 @@ interface ListRoutesProps {
 }
 
 const ListRoutes = () => {
-	const [routeName, setRouteName] = useState("#home");
-	const routes: Array<ListRoutesProps> = [
-		{
-			title: `Home`,
-			path: "#home",
-		},
-		{
-			title: `About`,
-			path: "#about",
-		},
-		{
-			title: `Services`,
-			path: "#services",
-		},
-		{
-			title: `Resume`,
-			path: "#resume",
-		},
-		{
-			title: `Portfolio`,
-			path: "#portfolio",
-		},
-		{
-			title: `Contact`,
-			path: "#contact",
-		},
-	];
+	const { routeName, setRouteName, routes } = useLayout();
 
 	const handleActiveRoute = (path: string) => {
 		setRouteName(path);

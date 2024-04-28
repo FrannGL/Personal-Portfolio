@@ -1,13 +1,12 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { Link } from "@/navigation";
-import { usePathname } from "next/navigation";
 import { SidebarProps } from "..";
+import { useLayout } from "@/context/LayoutContext";
 
 const Card = ({ title, path, icon }: SidebarProps) => {
-	const pathname = usePathname();
-	const shortPath = pathname.slice(3, pathname.length);
-	const isSelected = shortPath === path || (shortPath === "" && path === "/");
+	const { routeName, setRouteName } = useLayout();
+	const isSelected = routeName === path;
 
 	return (
 		<Link
@@ -18,6 +17,7 @@ const Card = ({ title, path, icon }: SidebarProps) => {
 			}
 			href={path}
 			title={title}
+			onClick={() => setRouteName(path)}
 		>
 			{icon}
 			<p className={styles.text}>{title}</p>
