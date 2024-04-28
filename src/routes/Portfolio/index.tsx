@@ -1,11 +1,14 @@
+import Title from "@/components/Title";
 import styles from "./styles.module.scss";
 
-const Portfolio = () => {
+const Resume = () => {
 	return (
 		<div className={styles.container}>
-			<h1>Portfolio</h1>
+			<div className={styles.inner_container}>
+				<Title title='PORTFOLIO' />
+			</div>
 		</div>
 	);
 };
 
-export default Portfolio;
+export default Resume;

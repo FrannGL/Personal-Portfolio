@@ -1,8 +1,8 @@
 @import "@/styles/theme.scss";
 
 .title_container {
-	@include width-height(175px, auto);
-	@include flex(column, center, center);
+	@include width-height(200px, auto);
+	@include flex(column, center, flex-start);
 	.title {
 		@include fontSize-fontWeight(28px, 600);
 		color: $white;
