@@ -1,11 +1,14 @@
+import Title from "@/components/Title";
 import styles from "./styles.module.scss";
 
-
-const Contact = () => {
+const Resume = () => {
 	return (
 		<div className={styles.container}>
-			<h1>Contact</h1>
+			<div className={styles.inner_container}>
+				<Title title='CONTACT' />
+			</div>
 		</div>
 	);
 };
-export default Contact;
+
+export default Resume;

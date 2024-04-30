@@ -1,7 +1,13 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include width-height(100%, calc(100vh - 74px));
-	@include flex(column, center, center);
+	@include width-height(100%, 100vh);
+	@include flex(row, center, center);
+	z-index: 2;
+	position: relative;
 	background: $main;
+	.inner_container {
+		@include width-height(1200px, auto);
+		@include flex(row, space-between, center, 50px);
+	}
 }

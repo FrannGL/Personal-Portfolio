@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.scss";
 import Button from "@/components/Button";
-import ListRoutes from "@/components/ListRoutes";
 import Link from "next/link";
 import Typed from "typed.js";
 import { Fade } from "react-awesome-reveal";

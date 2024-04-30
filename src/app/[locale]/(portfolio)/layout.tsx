@@ -1,33 +1,22 @@
 "use client";
-import { Dispatch, SetStateAction } from "react";
+import { LayoutProvider } from "@/context/LayoutContext";
 import "@/styles/globals.scss";
 import styles from "./styles.module.scss";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
-import { useState } from "react";
-
-export interface LayoutProps {
-	isOpen: boolean;
-	setIsOpen: Dispatch<SetStateAction<boolean>>;
-}
+import ChildrenContainer from "@/components/ChildrenContainer";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
-
 	return (
-		<div className={styles.container}>
-			<Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-			<div className={styles.inner_container}>
-				<Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
-				<div
-					className={
-						isOpen ? `${styles.children_container}` : `${styles.children_container} ${styles.children_container_closed}`
-					}
-				>
-					{children}
+		<LayoutProvider>
+			<div className={styles.container}>
+				<Navbar />
+				<div className={styles.inner_container}>
+					<Sidebar />
+					<ChildrenContainer>{children}</ChildrenContainer>
 				</div>
 			</div>
-		</div>
+		</LayoutProvider>
 	);
 };
 

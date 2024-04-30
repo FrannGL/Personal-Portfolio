@@ -6,7 +6,9 @@
 	flex-wrap: nowrap;
 	padding: 5px 20px;
 	background: $main;
+	z-index: 99;
 	transition: all 300ms ease-in-out;
+	position: fixed;
 	.logo {
 		@include width-height(150px, 60px);
 		object-fit: contain;
@@ -18,4 +20,8 @@
 		cursor: pointer;
 		transition: all 300ms ease-in-out;
 	}
+}
+
+.container_closed {
+	border-bottom: 1px solid $mainHover;
 }

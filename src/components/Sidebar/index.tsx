@@ -1,5 +1,4 @@
 import styles from "./styles.module.scss";
-import { LayoutProps } from "@/app/[locale]/(portfolio)/layout";
 import logo from "/public/assets/logo.png";
 import ResumeIcon from "../Icons/Resume";
 import AboutIcon from "../Icons/About";
@@ -9,6 +8,7 @@ import PortfolioIcon from "../Icons/Portfolio";
 import ServicesIcon from "../Icons/Services";
 import Card from "./Card";
 import Image from "next/image";
+import { useLayout } from "@/context/LayoutContext";
 
 export interface SidebarProps {
 	title: string;
@@ -16,39 +16,8 @@ export interface SidebarProps {
 	path: string;
 }
 
-const Sidebar = ({ isOpen }: LayoutProps) => {
-	const sidebar: Array<SidebarProps> = [
-		{
-			title: `Home`,
-			icon: <HomeIcon />,
-			path: "#home",
-		},
-		{
-			title: `About`,
-			icon: <AboutIcon />,
-			path: "#about",
-		},
-		{
-			title: `Services`,
-			icon: <ServicesIcon />,
-			path: "#services",
-		},
-		{
-			title: `Resume`,
-			icon: <ResumeIcon />,
-			path: "#resume",
-		},
-		{
-			title: `Portfolio`,
-			icon: <PortfolioIcon />,
-			path: "#portfolio",
-		},
-		{
-			title: `Contact`,
-			icon: <ContactIcon />,
-			path: "#contact",
-		},
-	];
+const Sidebar = () => {
+	const { isOpen, routes } = useLayout();
 
 	return (
 		<section className={isOpen ? `${styles.container}` : `${styles.container} ${styles.container_closed}`}>
@@ -56,7 +25,7 @@ const Sidebar = ({ isOpen }: LayoutProps) => {
 			<div
 				className={isOpen ? `${styles.cards_container}` : `${styles.cards_container} ${styles.cards_container_closed}`}
 			>
-				{sidebar.map(card => (
+				{routes.map(card => (
 					<Card key={card.title} title={card.title} path={card.path} icon={card.icon} />
 				))}
 			</div>

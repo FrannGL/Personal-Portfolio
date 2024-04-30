@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Image from "next/image";
 import Button from "@/components/Button";
 import { Fade } from "react-awesome-reveal";
+import Title from "@/components/Title";
 
 const About = () => {
 	return (
@@ -16,9 +17,7 @@ const About = () => {
 				</Fade>
 				<div className={styles.about_container}>
 					<Fade>
-						<div className={styles.title_container}>
-							<h2 className={styles.title}>ABOUT ME</h2>
-						</div>
+						<Title title='ABOUT ME' />
 						<div className={styles.content}>
 							<div className={styles.names}>
 								<Fade direction='down'>
@@ -44,7 +43,7 @@ const About = () => {
 							</Fade>
 						</div>
 					</Fade>
-					<Fade delay={700} cascade damping={0.6}>
+					<Fade delay={700} cascade damping={0.6} triggerOnce={true}>
 						<ul className={styles.resume}>
 							<li className={styles.item}>
 								Name: <span className={styles.content}>Franco Galluccio</span>
@@ -66,7 +65,7 @@ const About = () => {
 							</li>
 						</ul>
 					</Fade>
-					<Fade delay={4300}>
+					<Fade delay={4300} triggerOnce={true}>
 						<div className={styles.btn_container}>
 							<Link href={"assets/CV FRANCO IVAN GALLUCCIO.pdf"} target='_blank'>
 								<Button title='Download CV' styleName='second' />
