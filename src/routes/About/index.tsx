@@ -43,7 +43,7 @@ const About = () => {
 							</Fade>
 						</div>
 					</Fade>
-					<Fade delay={700} cascade damping={0.6}>
+					<Fade delay={700} cascade damping={0.6} triggerOnce={true}>
 						<ul className={styles.resume}>
 							<li className={styles.item}>
 								Name: <span className={styles.content}>Franco Galluccio</span>
@@ -65,7 +65,7 @@ const About = () => {
 							</li>
 						</ul>
 					</Fade>
-					<Fade delay={4300}>
+					<Fade delay={4300} triggerOnce={true}>
 						<div className={styles.btn_container}>
 							<Link href={"assets/CV FRANCO IVAN GALLUCCIO.pdf"} target='_blank'>
 								<Button title='Download CV' styleName='second' />

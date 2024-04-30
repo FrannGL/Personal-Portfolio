@@ -8,6 +8,14 @@
 	background: $main;
 	.inner_container {
 		@include width-height(1200px, auto);
-		@include flex(row, space-between, center, 50px);
+		@include flex(column, space-between, flex-start, 50px);
+		padding-top: 50px;
+		.cards_container {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			justify-content: center;
+			align-items: center;
+			gap: 40px;
+		}
 	}
 }
