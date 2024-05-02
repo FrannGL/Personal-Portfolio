@@ -8,6 +8,75 @@
 	background: $main;
 	.inner_container {
 		@include width-height(1200px, auto);
-		@include flex(row, space-between, center, 50px);
+		@include flex(column, space-between, flex-start, 50px);
+		.cards_container {
+			@include width-height(100%, 600px);
+			@include flex(row, center, center, 20px);
+			.left {
+				@include width-height(100%, 100%);
+				@include flex(column, space-between, flex-start, 75px);
+			}
+			.timeline {
+				@include width-height(30%, 60%);
+				position: relative;
+				@include flex(column, space-between, center);
+				&::before {
+					content: "";
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top: -40px;
+					width: 5px;
+					height: 130%;
+					background: linear-gradient(to bottom, transparent, #3e5065, transparent);
+					display: block;
+				}
+				.point {
+					color: $white;
+					position: relative;
+					&::before {
+						content: "";
+						position: absolute;
+						bottom: -12px;
+						left: 0;
+						height: 1px;
+						background: transparent linear-gradient(to right, transparent, $second, transparent);
+					}
+					&::after {
+						content: "";
+						position: absolute;
+						bottom: -16px;
+						left: calc(50% - 4px);
+						width: 8px;
+						height: 8px;
+						border-radius: 50%;
+						background: $mainBorder;
+						border: 1px solid $second;
+						transition: all 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
+						animation: glow 1s infinite ease-in-out;
+						box-shadow: 0 0 10px rgba(22, 192, 240, 0);
+					}
+				}
+			}
+
+			.right {
+				@include width-height(100%, 100%);
+				@include flex(column, center, flex-start);
+			}
+		}
+	}
+}
+
+@keyframes glow {
+	0% {
+		box-shadow: 0 0 10px rgba(22, 192, 240, 0);
+	}
+
+	50% {
+		box-shadow: 0 0 10px rgba(22, 192, 240, 1);
+	}
+
+	100% {
+		box-shadow: 0 0 10px rgba(22, 192, 240, 0);
 	}
 }
