@@ -62,7 +62,7 @@ const Services = () => {
 				<div className={styles.cards_container}>
 					<Fade cascade damping={0.6} triggerOnce={true}>
 						{services.map(service => (
-							<Card service={service} key={service.title} />
+							<Card {...service} key={service.title} />
 						))}
 					</Fade>
 				</div>
