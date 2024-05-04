@@ -5,6 +5,10 @@ import nextjsBadge from "/public/assets/badges/next.svg";
 import typescriptBadge from "/public/assets/badges/typescript.svg";
 import sassBadge from "/public/assets/badges/sass.svg";
 import reduxBadge from "/public/assets/badges/redux.svg";
+import reactBadge from "/public/assets/badges/react.svg";
+import expressBadge from "/public/assets/badges/express.svg";
+import mongoBadge from "/public/assets/badges/mongo.svg";
+import nodeBadge from "/public/assets/badges/node.svg";
 import { StaticImageData } from "next/image";
 import { Fade } from "react-awesome-reveal";
 
@@ -13,8 +17,8 @@ export interface ResumeProps {
 	company: string;
 	dates: string;
 	description: string;
-	className: string;
 	badges?: StaticImageData[];
+	certification?: string;
 }
 
 export interface StacksProps {
@@ -29,24 +33,23 @@ const Resume = () => {
 			dates: "06/2023 - Actualidad",
 			description:
 				"Como Desarrollador de Frontend en Notimation, me desempeño en la creación de interfaces de usuario atractivas y funcionales, implementando componentes reutilizables e interacción con servidores para la gestión de datos a través de API. Además, he desarrollado soluciones personalizadas, colaborando con equipos multidisciplinarios para entregar productos de alta calidad.",
-			className: "card_01",
 			badges: [nextjsBadge, typescriptBadge, reduxBadge, sassBadge],
 		},
 		{
-			title: "Experiencia 2",
-			company: "N/A",
-			dates: "--/-- - --/--",
+			title: "Carrera de Desarrollo Full Stack",
+			company: "Coderhouse",
+			dates: "08/2022 - 08/2023",
 			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.",
-			className: "card_02",
+				"Mi camino para convertirme en desarrollador Full Stack, donde me embarque en un emocionante viaje de aprendizaje con la pila de tecnologías MERN: MongoDB, Express.js, React y Node.js. A lo largo de mi cursada, también te familiarize con herramientas complementarias como Git para el control de versiones, Docker para la contenedorización, y tecnologías relacionadas con la nube para desplegar tus aplicaciones. El aprendizaje no solo fue técnico, sino también colaborativo, permitiéndome trabajar en proyectos en equipo, practicar metodologías ágiles y recibir feedback constructivo.",
+			badges: [reactBadge, nodeBadge, expressBadge, mongoBadge],
+			certification: "https://www.linkedin.com/in/franco-ivan-galluccio-553b1224a/details/certifications/",
 		},
 		{
-			title: "Experiencia 3",
-			company: "N/A",
-			dates: "--/-- - --/--",
+			title: "Bachiller en Ciencias Naturales",
+			company: "E.E.S N°2",
+			dates: "03/2008 - 12/2013",
 			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.",
-			className: "card_03",
+				"Durante mi tiempo en la secundaria, donde cursé el bachillerato en ciencias naturales, tuve la oportunidad de sumergirme en un mundo fascinante de descubrimientos y aprendizajes. Este enfoque educativo me permitió explorar temas relacionados con la biología, la química y la física, ampliando mis conocimientos sobre el funcionamiento del mundo natural y sus fenómenos.",
 		},
 	];
 

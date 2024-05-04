@@ -1,13 +1,15 @@
 import styles from "./styles.module.scss";
 import { ResumeProps } from "..";
 import DateIcon from "@/components/Icons/Date";
+import RedirectIcon from "@/components/Icons/Redirect";
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
+import Link from "next/link";
 
-const Card = ({ title, dates, description, company, className, badges }: ResumeProps) => {
+const Card = ({ title, dates, description, company, badges, certification }: ResumeProps) => {
 	return (
 		<Fade>
-			<div className={styles[className]}>
+			<div className={styles.card}>
 				<div className={styles.bag}></div>
 				<h3 className={styles.title}>
 					{title} <span> | {company}</span>
@@ -24,6 +26,12 @@ const Card = ({ title, dates, description, company, className, badges }: ResumeP
 							<Image key={index} src={badge} className={styles.badge} alt={`Badge ${index}`} />
 						))}
 					</div>
+				)}
+				{certification && (
+					<Link href={certification} target='_blank' className={styles.link}>
+						<RedirectIcon />
+						Ver certificaciones
+					</Link>
 				)}
 			</div>
 		</Fade>

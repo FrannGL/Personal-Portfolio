@@ -1,7 +1,7 @@
 @import "@/styles/theme.scss";
 
-.card_01 {
-	@include width-height(500px, 300px);
+.card {
+	@include width-height(500px, auto);
 	@include flex(column, center, center, 20px);
 	padding: 20px 10px;
 	background: $main;
@@ -54,10 +54,16 @@
 			color: $text;
 		}
 	}
-}
-
-.card_02,
-.card_03 {
-	@extend .card_01;
-	opacity: 0.3;
+	.link {
+		@include flex(row, center, center, 10px);
+		color: $text;
+		&:hover {
+			color: $second;
+			svg {
+				path[stroke="#c7c5c7"] {
+					stroke: $second;
+				}
+			}
+		}
+	}
 }
