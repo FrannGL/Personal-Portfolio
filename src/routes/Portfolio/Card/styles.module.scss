@@ -1,0 +1,6 @@
+@import "@/styles/theme.scss";
+
+.card {
+	@include width-height(350px, 250px);
+	border: 1px solid $second;
+}
