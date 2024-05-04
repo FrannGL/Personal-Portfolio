@@ -1,7 +1,11 @@
-const RedirectIcon = () => (
-	<svg xmlns='http://www.w3.org/2000/svg' width={18} height={18} fill='none' viewBox='0 0 24 24'>
+interface RedirectIconProps {
+	stroke: string;
+}
+
+const RedirectIcon = ({ stroke }: RedirectIconProps) => (
+	<svg xmlns='http://www.w3.org/2000/svg' width={25} height={25} fill='none' viewBox='0 0 24 24'>
 		<path
-			stroke='#c7c5c7'
+			stroke={stroke}
 			strokeLinecap='round'
 			strokeLinejoin='round'
 			strokeWidth={2}
@@ -9,4 +13,5 @@ const RedirectIcon = () => (
 		/>
 	</svg>
 );
+
 export default RedirectIcon;

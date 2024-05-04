@@ -9,6 +9,7 @@
 	.inner_container {
 		@include width-height(1200px, auto);
 		@include flex(column, space-between, flex-start, 50px);
+		margin-top: 75px;
 		.list_container {
 			@include width-height(100%, auto);
 		}

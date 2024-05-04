@@ -29,7 +29,7 @@ const Card = ({ title, dates, description, company, badges, certification }: Res
 				)}
 				{certification && (
 					<Link href={certification} target='_blank' className={styles.link}>
-						<RedirectIcon />
+						<RedirectIcon stroke='#c7c5c7' />
 						Ver certificaciones
 					</Link>
 				)}
