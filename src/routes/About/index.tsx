@@ -20,14 +20,14 @@ const About = () => {
 						<Title title='ABOUT ME' />
 						<div className={styles.content}>
 							<div className={styles.names}>
-								<Fade direction='down'>
+								<Fade direction='down' triggerOnce={true}>
 									<h3 className={styles.name}>I am Franco Galluccio</h3>
 								</Fade>
-								<Fade direction='up'>
+								<Fade direction='up' triggerOnce={true}>
 									<h4 className={styles.subname}>I am a Full-Stack Web Developer</h4>
 								</Fade>
 							</div>
-							<Fade direction='up'>
+							<Fade direction='up' triggerOnce={true}>
 								<div className={styles.leyends}>
 									<p className={styles.leyend}>
 										Lorem, ipsum dolor sit amet consectetur adipisicing elit. A obcaecati enim suscipit, impedit
