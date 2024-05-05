@@ -1,0 +1,77 @@
+@import "@/styles/theme.scss";
+
+.card {
+	@include width-height(375px, 270px);
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	border-radius: 10px;
+	border-bottom: 2px solid $second;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 0 0 20px rgba(26, 26, 26, 0.8);
+	transition: all 0.3s ease-in-out;
+	.image {
+		@include width-height(100%, 100%);
+		object-position: bottom;
+		object-fit: cover;
+		border-radius: 10px;
+		transition: all 0.3s ease-in-out;
+	}
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include width-height(100%, 100%);
+		background: rgba(38, 52, 70, 0);
+		@include flex(column, center, center, 20px);
+		opacity: 0;
+		transition: opacity 0.4s ease-in-out, clip-path 0.5s ease-in-out;
+		clip-path: circle(0% at 50% 50%);
+		.titles {
+			@include width-height(100%, auto);
+			@include flex(column, center, center, 20px);
+			padding: 0 10px;
+			.title {
+				color: $white;
+				text-align: center;
+				@include fontSize-fontWeight(17px, 600);
+				span {
+					color: $second;
+					font-weight: 400;
+				}
+			}
+			.description {
+				color: $text;
+				text-align: center;
+				@include fontSize-fontWeight(13px, 400);
+			}
+		}
+		.btn_container {
+			@include width-height(100%, auto);
+			@include flex(row, center, center, 20px);
+			.link {
+				&:hover {
+					svg {
+						transition: all 200ms ease-in-out;
+						transform: scale(1.1);
+					}
+				}
+			}
+		}
+	}
+
+	&:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 0 20px rgba(22, 192, 240, 0.8);
+		.image {
+			transform: scale(1.2);
+			filter: blur(4px);
+		}
+		.overlay {
+			clip-path: circle(150% at 50% 50%);
+			background: rgba(38, 52, 70, 0.8);
+			opacity: 1;
+		}
+	}
+}
