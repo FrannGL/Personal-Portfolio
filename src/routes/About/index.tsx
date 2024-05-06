@@ -26,7 +26,7 @@ const About = () => {
         </Fade>
         <div className={styles.about_container}>
           <Fade>
-            <Title title="ABOUT ME" />
+            <Title title={dict("titles.about")} />
             <div className={styles.content}>
               <div className={styles.names}>
                 <Fade direction="down" triggerOnce={true}>
