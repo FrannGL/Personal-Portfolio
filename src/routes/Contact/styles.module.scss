@@ -5,7 +5,7 @@
 	@include flex(row, center, center);
 	z-index: 2;
 	position: relative;
-	background: $main;
+	background: $mainBlue;
 	.inner_container {
 		@include width-height(1200px, auto);
 		@include flex(column, center, flex-start, 50px);
@@ -17,7 +17,7 @@
 			.resume_container {
 				@include width-height(100%, 600px);
 				@include flex(column, center, center, 30px);
-				background: $mainHover;
+				background: $darkBlue;
 				border: 3px solid #374757;
 				padding: 20px 30px;
 				padding-bottom: 0;
@@ -25,7 +25,7 @@
 			.form {
 				@include width-height(100%, 600px);
 				@include flex(column, space-between, flex-start);
-				background: $mainHover;
+				background: $darkBlue;
 				border: 3px solid #374757;
 				padding: 20px;
 				.error {

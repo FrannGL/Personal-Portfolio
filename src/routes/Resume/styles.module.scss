@@ -5,7 +5,7 @@
 	@include flex(row, center, center);
 	z-index: 2;
 	position: relative;
-	background: $main;
+	background: $mainBlue;
 	.inner_container {
 		@include width-height(1200px, auto);
 		@include flex(column, space-between, flex-start, 50px);
@@ -50,7 +50,7 @@
 						width: 8px;
 						height: 8px;
 						border-radius: 50%;
-						background: $mainBorder;
+						background: $stellBlue;
 						border: 1px solid $second;
 						transition: all 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
 						animation: glow 1s infinite ease-in-out;

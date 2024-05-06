@@ -5,7 +5,7 @@
 	@include flex(row, center, center);
 	z-index: 2;
 	position: relative;
-	background: $main;
+	background: $darkBlue;
 	.inner_container {
 		@include width-height(1200px, auto);
 		@include flex(column, space-between, flex-start, 50px);

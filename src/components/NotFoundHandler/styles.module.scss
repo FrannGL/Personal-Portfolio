@@ -11,14 +11,14 @@
 		@include fontSize-fontWeight(20px, 400);
 		padding: 10px 20px;
 		color: $white;
-		background-color: $main;
+		background-color: $mainBlue;
 		border: none;
 		border-radius: 4px;
 		cursor: pointer;
 		transition: background 0.3s ease;
 		text-decoration: none;
 		&:hover {
-			background-color: $mainHover;
+			background-color: $slateBlue;
 		}
 	}
 }

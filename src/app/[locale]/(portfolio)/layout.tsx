@@ -13,7 +13,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<LayoutProvider>
 			<div className={styles.container}>
-				<Navbar />
+				{/* <Navbar /> */}
 				<ToastContainer
 					position='bottom-right'
 					limit={2}
