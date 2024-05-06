@@ -1,0 +1,30 @@
+@import "@/styles/theme";
+
+.label {
+	@include width-height(100%, auto);
+	@include flex(column, center, flex-start, 10px);
+	@include fontSize-fontWeight(14px, 400);
+	color: $text;
+	position: relative;
+	.input {
+		@include width-height(100%, auto);
+		color: $text;
+		@include fontSize-fontWeight(14px, 400);
+		padding: 10px 10px 10px 20px;
+		border-radius: 4px;
+		background: $main;
+		border: none;
+		outline: none;
+		border-bottom: 1px solid $second;
+		&:focus {
+			outline: none;
+			border: 1px solid $second;
+		}
+	}
+	.textarea {
+		@extend .input;
+		@include width-height(100%, 90px);
+		font-family: inherit;
+		resize: none;
+	}
+}
