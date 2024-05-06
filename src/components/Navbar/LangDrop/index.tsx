@@ -19,7 +19,7 @@ const LangDrop = () => {
 			<button onClick={() => setOpen(!open)} className={styles.lang_button}>
 				<LanguageIcon />
 				<span>|</span>
-				<h1> {locale}</h1>
+				<p>{locale}</p>
 			</button>
 
 			<li className={`${styles.list_container} ${!open && styles.list_hidden}`}>

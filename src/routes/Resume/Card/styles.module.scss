@@ -4,7 +4,7 @@
   @include width-height(500px, auto);
   @include flex(column, center, center, 20px);
   padding: 20px 10px;
-  background: $main;
+  background: $mainBlue;
   border: 3px solid #374757;
   box-shadow: 0 4px 5px rgba(37, 50, 66, 0.7);
   position: relative;

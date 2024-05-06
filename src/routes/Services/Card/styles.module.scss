@@ -3,7 +3,7 @@
 .card {
 	@include flex(column, center, center, 20px);
 	padding: 30px 20px;
-	background-color: $mainHover;
+	background-color: $mainBlue;
 	border-bottom: 2px solid $second;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
