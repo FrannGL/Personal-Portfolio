@@ -12,8 +12,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-	title: "Small",
-	description: "Small",
+	title: "FranGL Portoflio",
+	description: "Personal website",
 };
 
 export default function RootLayout({

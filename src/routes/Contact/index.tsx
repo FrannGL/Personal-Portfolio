@@ -12,144 +12,180 @@ import useFormValidator from "@/hooks/useFormValidator";
 import { Fade } from "react-awesome-reveal";
 import { useMessageToast } from "@/hooks/useMessageToast";
 import { POST } from "@/services/fetch";
+import { useTranslations } from "next-intl";
 
 export interface Resume {
-	id: number;
-	title: string;
-	description: string;
-	icon: JSX.Element;
+  id: number;
+  title: string;
+  description: string;
+  icon: JSX.Element;
 }
 
 const Resume = () => {
-	const [formData, setFormData] = useState({
-		name: "",
-		email: "",
-		subject: "",
-		message: "",
-	});
-	const [checkValidation, setCheckValidation] = useState(false);
-	const errors = useFormValidator(formData);
-	const { notify, notifyError } = useMessageToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [checkValidation, setCheckValidation] = useState(false);
+  const errors = useFormValidator(formData);
+  const { notify, notifyError } = useMessageToast();
+  const dict = useTranslations("dict");
 
-	const resumeInfo: Resume[] = [
-		{
-			id: 1,
-			title: "Location",
-			description: "Buenos Aires, Argentina",
-			icon: <LocationIcon />,
-		},
-		{
-			id: 2,
-			title: "Email",
-			description: "francoivangalluccio@gmail.com",
-			icon: <MessageIcon />,
-		},
-		{
-			id: 3,
-			title: "Phone",
-			description: "+54 11 2155-7802",
-			icon: <PhoneIcon />,
-		},
-		{
-			id: 4,
-			title: "Website",
-			description: "franngl.vercel.app",
-			icon: <WebsiteIcon />,
-		},
-	];
+  const resumeInfo: Resume[] = [
+    {
+      id: 1,
+      title: dict("contact.resume.location"),
+      description: "Buenos Aires, Argentina",
+      icon: <LocationIcon />,
+    },
+    {
+      id: 2,
+      title: dict("contact.resume.email"),
+      description: "francoivangalluccio@gmail.com",
+      icon: <MessageIcon />,
+    },
+    {
+      id: 3,
+      title: dict("contact.resume.phone"),
+      description: "+54 11 2155-7802",
+      icon: <PhoneIcon />,
+    },
+    {
+      id: 4,
+      title: dict("contact.resume.website"),
+      description: "franngl.vercel.app",
+      icon: <WebsiteIcon />,
+    },
+  ];
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		const { name, value } = e.target;
-		setFormData(prevFormData => ({
-			...prevFormData,
-			[name]: value,
-		}));
-	};
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
 
-	const sendForm = async () => {
-		try {
-			const response = await POST("send-email", formData);
-			if (response.statusCode === 201) {
-				notify("Formulario enviado correctamente");
-				setFormData({
-					name: "",
-					email: "",
-					subject: "",
-					message: "",
-				});
-				setCheckValidation(false);
-			} else {
-				notifyError("Error al enviar el formulario");
-			}
-		} catch (e) {
-			notifyError("Error en el servidor");
-			console.log(e);
-		}
-	};
+  const sendForm = async () => {
+    try {
+      const response = await POST("send-email", formData);
+      if (response.statusCode === 201) {
+        notify(dict("toast.success"));
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+        setCheckValidation(false);
+      } else {
+        notifyError(dict("toast.error_front"));
+      }
+    } catch (e) {
+      notifyError(dict("toast.error_back"));
+      console.log(e);
+    }
+  };
 
-	const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		setCheckValidation(true);
-		if (Object.keys(errors).length === 0) {
-			sendForm();
-		}
-	};
+  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setCheckValidation(true);
+    if (Object.keys(errors).length === 0) {
+      sendForm();
+    }
+  };
 
-	return (
-		<div className={styles.container}>
-			<Fade>
-				<div className={styles.inner_container}>
-					<Title title='CONTACT' />
-					<div className={styles.form_container}>
-						<div className={styles.resume_container}>
-							{resumeInfo.map(resume => (
-								<Card key={resume.id} resume={resume} />
-							))}
-						</div>
-						<form className={styles.form} onSubmit={handleSubmit}>
-							<Input
-								type='text'
-								name='name'
-								value={formData.name}
-								label='Name'
-								placeholder='Carl Johnson ...'
-								onChange={handleChange}
-							/>
-							<p className={checkValidation && errors.name ? styles.error : styles.error_hidden}>{errors.name}</p>
-							<Input
-								type='email'
-								name='email'
-								value={formData.email}
-								label='Email'
-								placeholder='carljohnson@example.com ...'
-								onChange={handleChange}
-							/>
-							<p className={checkValidation && errors.email ? styles.error : styles.error_hidden}>{errors.email}</p>
-							<Input
-								type='text'
-								name='subject'
-								value={formData.subject}
-								label='Subject'
-								placeholder='Job Offer ...'
-								onChange={handleChange}
-							/>
-							<p className={checkValidation && errors.subject ? styles.error : styles.error_hidden}>{errors.subject}</p>
-							<Input
-								type='textarea'
-								name='message'
-								value={formData.message}
-								label='Message'
-								placeholder='Your message...'
-								onChange={handleChange}
-							/>
-							<p className={checkValidation && errors.message ? styles.error : styles.error_hidden}>{errors.message}</p>
-							<Button title='Send message' styleName='second' />
-						</form>
-					</div>
-				</div>
-			</Fade>
-		</div>
-	);
+  return (
+    <div className={styles.container}>
+      <Fade>
+        <div className={styles.inner_container}>
+          <Title title={dict("titles.contact")} />
+          <div className={styles.form_container}>
+            <div className={styles.resume_container}>
+              {resumeInfo.map((resume) => (
+                <Card key={resume.id} resume={resume} />
+              ))}
+            </div>
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <Input
+                type="text"
+                name="name"
+                value={formData.name}
+                label={dict("contact.form.name")}
+                placeholder="Carl Johnson ..."
+                onChange={handleChange}
+              />
+              <p
+                className={
+                  checkValidation && errors.name
+                    ? styles.error
+                    : styles.error_hidden
+                }
+              >
+                {errors.name}
+              </p>
+              <Input
+                type="email"
+                name="email"
+                value={formData.email}
+                label={dict("contact.form.email")}
+                placeholder="carljohnson@example.com ..."
+                onChange={handleChange}
+              />
+              <p
+                className={
+                  checkValidation && errors.email
+                    ? styles.error
+                    : styles.error_hidden
+                }
+              >
+                {errors.email}
+              </p>
+              <Input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                label={dict("contact.form.subject")}
+                placeholder={dict("contact.form.subject_placeholder")}
+                onChange={handleChange}
+              />
+              <p
+                className={
+                  checkValidation && errors.subject
+                    ? styles.error
+                    : styles.error_hidden
+                }
+              >
+                {errors.subject}
+              </p>
+              <Input
+                type="textarea"
+                name="message"
+                value={formData.message}
+                label={dict("contact.form.message")}
+                placeholder={dict("contact.form.message_placeholder")}
+                onChange={handleChange}
+              />
+              <p
+                className={
+                  checkValidation && errors.message
+                    ? styles.error
+                    : styles.error_hidden
+                }
+              >
+                {errors.message}
+              </p>
+              <Button title={dict("contact.form.btn")} styleName="second" />
+            </form>
+          </div>
+        </div>
+      </Fade>
+    </div>
+  );
 };
 
 export default Resume;

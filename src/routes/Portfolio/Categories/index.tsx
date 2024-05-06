@@ -1,27 +1,36 @@
 import styles from "./styles.module.scss";
+import { useTranslations } from "next-intl";
 
 interface CategoriesProps {
-	setFilter: (filter: string) => void;
+  setFilter: (filter: string) => void;
 }
 
 const Categories = ({ setFilter }: CategoriesProps) => {
-	const handleCategoryClick = (category: string) => {
-		setFilter(category);
-	};
+  const dict = useTranslations("dict.portfolio.categories");
 
-	return (
-		<ul className={styles.list}>
-			<li className={styles.item} onClick={() => handleCategoryClick("All")}>
-				All
-			</li>
-			<li className={styles.item} onClick={() => handleCategoryClick("Frontend")}>
-				Frontend
-			</li>
-			<li className={styles.item} onClick={() => handleCategoryClick("Full Stack")}>
-				Full Stack
-			</li>
-		</ul>
-	);
+  const handleCategoryClick = (category: string) => {
+    setFilter(category);
+  };
+
+  return (
+    <ul className={styles.list}>
+      <li className={styles.item} onClick={() => handleCategoryClick("All")}>
+        {dict("all")}
+      </li>
+      <li
+        className={styles.item}
+        onClick={() => handleCategoryClick("Frontend")}
+      >
+        {dict("frontend")}
+      </li>
+      <li
+        className={styles.item}
+        onClick={() => handleCategoryClick("Full Stack")}
+      >
+        {dict("full")}
+      </li>
+    </ul>
+  );
 };
 
 export default Categories;

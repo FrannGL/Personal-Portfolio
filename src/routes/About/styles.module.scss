@@ -44,7 +44,7 @@
 						color: $white;
 					}
 					.subname {
-						@include fontSize-fontWeight(18px, 600);
+						@include fontSize-fontWeight(16px, 600);
 						color: $second;
 					}
 				}
