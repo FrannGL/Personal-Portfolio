@@ -11,6 +11,7 @@ import { useState } from "react";
 import useFormValidator from "@/hooks/useFormValidator";
 import { Fade } from "react-awesome-reveal";
 import { useMessageToast } from "@/hooks/useMessageToast";
+import { POST } from "@/services/fetch";
 
 export interface Resume {
 	id: number;
@@ -65,19 +66,32 @@ const Resume = () => {
 		}));
 	};
 
+	const sendForm = async () => {
+		try {
+			const response = await POST("send-email", formData);
+			if (response.statusCode === 201) {
+				notify("Formulario enviado correctamente");
+				setFormData({
+					name: "",
+					email: "",
+					subject: "",
+					message: "",
+				});
+				setCheckValidation(false);
+			} else {
+				notifyError("Error al enviar el formulario");
+			}
+		} catch (e) {
+			notifyError("Error en el servidor");
+			console.log(e);
+		}
+	};
+
 	const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setCheckValidation(true);
 		if (Object.keys(errors).length === 0) {
-			notify("Formulario enviado correctamente");
-			console.log("Formulario enviado:", formData);
-			setFormData({
-				name: "",
-				email: "",
-				subject: "",
-				message: "",
-			});
-			setCheckValidation(false);
+			sendForm();
 		}
 	};
 
