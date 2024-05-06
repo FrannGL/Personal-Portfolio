@@ -23,7 +23,7 @@
 	}
 	.textarea {
 		@extend .input;
-		@include width-height(100%, 90px);
+		@include width-height(100%, 120px);
 		font-family: inherit;
 		resize: none;
 	}

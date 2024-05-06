@@ -13,19 +13,14 @@ import ListRoutes from "@/components/ListRoutes";
 const sections = ["home", "about", "services", "resume", "portfolio", "contact"];
 export default function Home() {
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const [currentSection, setCurrentSection] = useState(sections[0]);
 
 	useEffect(() => {
 		const handleWheel = (event: WheelEvent) => {
 			event.preventDefault();
-			if (event.deltaY > 0) {
-				if (currentIndex < sections.length - 1) {
-					setCurrentIndex(currentIndex + 1);
-				}
-			} else {
-				if (currentIndex > 0) {
-					setCurrentIndex(currentIndex - 1);
-				}
-			}
+			const direction = event.deltaY > 0 ? 1 : -1;
+			const newIndex = Math.min(Math.max(currentIndex + direction, 0), sections.length - 1);
+			setCurrentIndex(newIndex);
 		};
 
 		window.addEventListener("wheel", handleWheel, { passive: false });
@@ -44,6 +39,11 @@ export default function Home() {
 		};
 	}, [currentIndex]);
 
+	useEffect(() => {
+		const newSection = sections[currentIndex];
+		setCurrentSection(newSection);
+	}, [currentIndex]);
+
 	return (
 		<MainLayout>
 			{sections.map((section, index) => (
@@ -57,7 +57,7 @@ export default function Home() {
 				</div>
 			))}
 			<div className={styles.list}>
-				<ListRoutes />
+				<ListRoutes currentSection={currentSection} setCurrentSection={setCurrentSection} />
 			</div>
 		</MainLayout>
 	);
