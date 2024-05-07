@@ -3,10 +3,6 @@
 .container {
 	@include width-height(100%, 100vh);
 	@include flex(column, center, center, 50px);
-	background-image: url("/assets/background.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center top;
 	&::before {
 		content: "";
 		position: absolute;
