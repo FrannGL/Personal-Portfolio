@@ -1,6 +1,6 @@
 import Title from "@/components/Title";
 import styles from "./styles.module.scss";
-import Card from "./Card";
+import Card from "@/components/Card";
 import LocationIcon from "@/components/Icons/Location";
 import MessageIcon from "@/components/Icons/Message";
 import WebsiteIcon from "@/components/Icons/Website";
@@ -14,14 +14,14 @@ import { useMessageToast } from "@/hooks/useMessageToast";
 import { POST } from "@/services/fetch";
 import { useTranslations } from "next-intl";
 
-export interface Resume {
+interface Summary {
   id: number;
   title: string;
   description: string;
   icon: JSX.Element;
 }
 
-const Resume = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,7 +33,7 @@ const Resume = () => {
   const { notify, notifyError } = useMessageToast();
   const dict = useTranslations("dict");
 
-  const resumeInfo: Resume[] = [
+  const summaryInfo: Summary[] = [
     {
       id: 1,
       title: dict("contact.resume.location"),
@@ -106,8 +106,14 @@ const Resume = () => {
           <Title title={dict("titles.contact")} />
           <div className={styles.form_container}>
             <div className={styles.resume_container}>
-              {resumeInfo.map((resume) => (
-                <Card key={resume.id} resume={resume} />
+              {summaryInfo.map((summary: Summary) => (
+                <Card
+                  key={summary.id}
+                  title={summary.title}
+                  description={summary.description}
+                  icon={summary.icon}
+                  className="card_contact"
+                />
               ))}
             </div>
             <form className={styles.form} onSubmit={handleSubmit}>
@@ -188,4 +194,4 @@ const Resume = () => {
   );
 };
 
-export default Resume;
+export default Contact;

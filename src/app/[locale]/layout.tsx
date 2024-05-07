@@ -12,7 +12,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-	title: "FranGL Portoflio",
+	title: "Hey!👋 Franco Galluccio Portfolio",
 	description: "Personal website",
 };
 
