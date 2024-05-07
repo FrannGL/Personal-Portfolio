@@ -11,14 +11,16 @@ import {
   useState,
   Dispatch,
   SetStateAction,
+  useEffect,
+  useMemo,
 } from "react";
 
 interface LayoutContextType {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
-  routeName: string;
-  setRouteName: Dispatch<SetStateAction<string>>;
   routes: { title: string; path: string; icon: JSX.Element }[];
+  activeRoute: string;
+  setActiveRoute: Dispatch<SetStateAction<string>>;
 }
 
 const LayoutContext = createContext<LayoutContextType | undefined>(undefined);
@@ -35,45 +37,45 @@ export const LayoutProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [routeName, setRouteName] = useState<string>("#home");
+  const [activeRoute, setActiveRoute] = useState<string>("#home");
   const dict = useTranslations("dict.titles");
 
-  const routes = [
-    {
-      title: dict("home"),
-      icon: <HomeIcon />,
-      path: "#home",
-    },
-    {
-      title: dict("about"),
-      icon: <AboutIcon />,
-      path: "#about",
-    },
-    {
-      title: dict("services"),
-      icon: <ServicesIcon />,
-      path: "#services",
-    },
-    {
-      title: dict("resume"),
-      icon: <ResumeIcon />,
-      path: "#resume",
-    },
-    {
-      title: dict("portfolio"),
-      icon: <PortfolioIcon />,
-      path: "#portfolio",
-    },
-    {
-      title: dict("contact"),
-      icon: <ContactIcon />,
-      path: "#contact",
-    },
-  ];
+  const routes = useMemo(
+    () => [
+      { title: dict("home"), icon: <HomeIcon />, path: "#home" },
+      { title: dict("about"), icon: <AboutIcon />, path: "#about" },
+      { title: dict("services"), icon: <ServicesIcon />, path: "#services" },
+      { title: dict("resume"), icon: <ResumeIcon />, path: "#resume" },
+      { title: dict("portfolio"), icon: <PortfolioIcon />, path: "#portfolio" },
+      { title: dict("contact"), icon: <ContactIcon />, path: "#contact" },
+    ],
+    [dict]
+  );
+
+  const currentIndex = routes.findIndex((route) => route.path === activeRoute);
+
+  useEffect(() => {
+    const handleWheel = (event: WheelEvent) => {
+      event.preventDefault();
+      const direction = event.deltaY > 0 ? 1 : -1;
+      const newIndex = Math.min(
+        Math.max(currentIndex + direction, 0),
+        routes.length - 1
+      );
+
+      setActiveRoute(routes[newIndex].path);
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, [currentIndex, routes, setActiveRoute]);
 
   return (
     <LayoutContext.Provider
-      value={{ isOpen, setIsOpen, routeName, setRouteName, routes }}
+      value={{ isOpen, setIsOpen, activeRoute, setActiveRoute, routes }}
     >
       {children}
     </LayoutContext.Provider>

@@ -1,11 +1,12 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include width-height(100%, 100vh);
-	min-height: 100vh;
-	.inner_container {
-		@include width-height(100%, 100%);
-		@include flex(row, space-between, flex-start);
-		flex-wrap: nowrap;
-	}
+  @include width-height(100%, 100vh);
+  min-height: 100vh;
+  .inner_container {
+    @include width-height(100%, 100%);
+    @include flex(row, space-between, flex-start);
+    flex-wrap: nowrap;
+    position: relative;
+  }
 }

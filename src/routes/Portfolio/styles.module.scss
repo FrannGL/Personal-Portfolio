@@ -7,9 +7,8 @@
 	position: relative;
 	background: $darkBlue;
 	.inner_container {
-		@include width-height(1200px, auto);
-		@include flex(column, space-between, flex-start, 50px);
-		margin-top: 75px;
+		@include width-height(1200px, 100%);
+		@include flex(column, space-around, flex-start, 70px);
 		.list_container {
 			@include width-height(100%, auto);
 		}

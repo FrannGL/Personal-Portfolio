@@ -7,10 +7,10 @@
 	position: relative;
 	background: $mainBlue;
 	.inner_container {
-		@include width-height(1200px, auto);
-		@include flex(column, space-between, flex-start, 50px);
+		@include width-height(1200px, 100%);
+		@include flex(column, space-around, flex-start);
 		.cards_container {
-			@include width-height(100%, 600px);
+			@include width-height(100%, auto);
 			@include flex(row, center, center, 20px);
 			.left {
 				@include width-height(100%, 100%);

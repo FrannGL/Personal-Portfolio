@@ -3,15 +3,11 @@ import styles from "./styles.module.scss";
 import { Fade } from "react-awesome-reveal";
 import { useLayout } from "@/context/LayoutContext";
 
-interface ListRoutesProps {
-  title: string;
-  path: string;
-}
-
 const ListRoutes = () => {
-  const { routeName, setRouteName, routes } = useLayout();
+  const { routes, activeRoute, setActiveRoute } = useLayout();
+
   const handleActiveRoute = (path: string) => {
-    setRouteName(path);
+    setActiveRoute(path);
   };
 
   return (
@@ -27,7 +23,8 @@ const ListRoutes = () => {
               <p className={styles.title}>{route.title}</p>
               <div
                 className={
-                  routeName === route.path
+                  `#${activeRoute}` === route.path ||
+                  activeRoute === route.path
                     ? styles.circle
                     : `${styles.circle} ${styles.hidden}`
                 }

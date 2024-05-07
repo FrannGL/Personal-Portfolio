@@ -7,15 +7,15 @@
 	position: relative;
 	background: $mainBlue;
 	.inner_container {
-		@include width-height(1200px, auto);
-		@include flex(column, center, flex-start, 50px);
+		@include width-height(1200px, 100%);
+		@include flex(column, space-around, flex-start, 75px);
 		.form_container {
-			@include width-height(100%, auto);
+			@include width-height(100%, 650px);
 			display: grid;
-			grid-template-columns: 30% 70%;
+			grid-template-columns: 32% 64.5%;
 			gap: 40px;
 			.resume_container {
-				@include width-height(100%, 600px);
+				@include width-height(100%, auto);
 				@include flex(column, center, center, 30px);
 				background: $darkBlue;
 				border: 3px solid #374757;
@@ -23,7 +23,7 @@
 				padding-bottom: 0;
 			}
 			.form {
-				@include width-height(100%, 600px);
+				@include width-height(100%, auto);
 				@include flex(column, space-between, flex-start);
 				background: $darkBlue;
 				border: 3px solid #374757;
