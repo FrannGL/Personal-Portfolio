@@ -2,7 +2,8 @@ import Title from "@/components/Title";
 import styles from "./styles.module.scss";
 import Categories from "./Categories";
 import { useState } from "react";
-import Card from "./Card";
+// import Card from "./Card";
+import Card from "@/components/Card";
 import { StaticImageData } from "next/image";
 import juguetes_perdidos_preview from "/public/assets/juguetes-perdidos.png";
 import maular_preview from "/public/assets/Maular.png";
@@ -13,7 +14,7 @@ import chapas_qr_preview from "/public/assets/Chapas-qr.png";
 import { Fade } from "react-awesome-reveal";
 import { useTranslations } from "next-intl";
 
-export interface Project {
+interface Project {
   id: number;
   title: string;
   description: string;
@@ -99,8 +100,19 @@ const Resume = () => {
           </div>
           <div className={styles.cards_container}>
             <Fade cascade damping={0.3} triggerOnce={true}>
-              {filteredProjects.map((project) => (
-                <Card key={project.id} project={project} />
+              {filteredProjects.map((project: Project) => (
+                <Card
+                  key={project.id}
+                  id={project.id}
+                  title={project.title}
+                  description={project.description}
+                  category={project.category}
+                  image={project.image}
+                  repository={project.repository}
+                  url={project.url}
+                  className="card_portfolio"
+                  overlay
+                />
               ))}
             </Fade>
           </div>
