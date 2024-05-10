@@ -5,17 +5,14 @@ import { Link } from "@/navigation";
 import LangDrop from "./LangDrop";
 import logo from "/public/assets/nav-logo.png";
 import BurgerMenuIcon from "../Icons/BurgerMenu";
-import CloseIcon from "../Icons/Close";
 import { Fade } from "react-awesome-reveal";
 import { useState } from "react";
 import { useLayout } from "@/context/LayoutContext";
-import { useCloseDropdown } from "@/hooks/useCloseDropdown";
 import Card from "../Sidebar/Card";
 
 const Navbar = () => {
 	const { routes, activeRoute, setActiveRoute } = useLayout();
 	const [open, setOpen] = useState<boolean>(false);
-	const { dropdownRef } = useCloseDropdown(setOpen);
 
 	return (
 		<nav className={styles.container}>
@@ -28,7 +25,10 @@ const Navbar = () => {
 					<BurgerMenuIcon />
 				</button>
 			</Fade>
-			<ul className={`${styles.list_container} ${!open && styles.list_container_hidden}`}>
+			<ul
+				className={`${styles.list_container} ${!open && styles.list_container_hidden}`}
+				onClick={() => setOpen(false)}
+			>
 				{routes.map(card => (
 					<Card
 						key={card.title}
@@ -38,7 +38,7 @@ const Navbar = () => {
 						isActive={activeRoute === card.path}
 						setActive={setActiveRoute}
 					/>
-				))}{" "}
+				))}
 			</ul>
 		</nav>
 	);

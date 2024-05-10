@@ -4,7 +4,7 @@ import { Link } from "@/navigation";
 import { SidebarProps } from "..";
 import { useLayout } from "@/context/LayoutContext";
 
-const Card = ({ title, path, icon, isActive, setActive  }: SidebarProps) => {
+const Card = ({ title, path, icon  }: SidebarProps) => {
 	const { activeRoute, setActiveRoute} = useLayout();
 	const isSelected = activeRoute === path;
 
