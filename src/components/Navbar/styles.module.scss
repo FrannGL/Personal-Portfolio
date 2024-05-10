@@ -1,7 +1,7 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include width-height(100%, auto);
+	@include width-height(100vw, auto);
 	@include flex(row, space-between, center);
 	flex-wrap: nowrap;
 	padding: 5px 20px;
@@ -40,10 +40,6 @@
 		max-height: 0px;
 		transition: all 0.3s ease;
 	}
-}
-
-.container_closed {
-	border-bottom: 1px solid $darkBlue;
 }
 
 @media (width >= $queryLg) {

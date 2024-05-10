@@ -10,11 +10,11 @@ import Contact from "@/routes/Contact";
 
 const sections = [
   { id: "home", component: <HomePage /> },
-  { id: "about", component: <About /> },
-  { id: "services", component: <Services /> },
-  { id: "resume", component: <Resume /> },
-  { id: "portfolio", component: <Portfolio /> },
-  { id: "contact", component: <Contact /> },
+  // { id: "about", component: <About /> },
+  // { id: "services", component: <Services /> },
+  // { id: "resume", component: <Resume /> },
+  // { id: "portfolio", component: <Portfolio /> },
+  // { id: "contact", component: <Contact /> },
 ];
 
 const SectionsContainer = () => {

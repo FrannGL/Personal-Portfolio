@@ -2,6 +2,7 @@
 
 .main {
 	@include main-btn;
+	padding: 10px 20px;
 }
 
 .second {
@@ -10,5 +11,19 @@
 	border: 2px solid $second;
 	&:hover {
 		background: $second;
+	}
+}
+
+@media (width >= $queryLg) {
+	.main {
+		padding: 15px 35px;
+	}
+
+	.second {
+		background: transparent;
+		border: 2px solid $second;
+		&:hover {
+			background: $second;
+		}
 	}
 }
