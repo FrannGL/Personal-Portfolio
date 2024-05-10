@@ -1,38 +1,40 @@
 @import "@/styles/theme.scss";
 
-.container {
-  @include flex(column, center, center, 20px);
-  position: absolute;
-  top: 40%;
-  right: 30px;
-  z-index: 20;
-  .list {
-    color: $white;
-    .link {
-      @include width-height(105px, auto);
-      @include flex(row, space-between, center, 10px);
-      padding: 0 5px;
-      .circle {
-        @include width-height(12px, 12px);
-        border-radius: 50px;
-        background-color: $second;
-      }
-      .hidden {
-        background: transparent;
-        border: 2px solid $second;
-      }
-      .title {
-        @include fontSize-fontWeight(14px, 600);
-        visibility: hidden;
-        color: $white;
-        transition: all 200ms ease-in-out;
-      }
-      &:hover {
-        .title {
-          visibility: visible;
-          display: block;
-        }
-      }
-    }
-  }
+@media (width >= $queryLg) {
+	.container {
+		@include flex(column, center, center, 20px);
+		position: absolute;
+		top: 40%;
+		right: 30px;
+		z-index: 20;
+		.list {
+			color: $white;
+			.link {
+				@include width-height(105px, auto);
+				@include flex(row, space-between, center, 10px);
+				padding: 0 5px;
+				.circle {
+					@include width-height(12px, 12px);
+					border-radius: 50px;
+					background-color: $second;
+				}
+				.hidden {
+					background: transparent;
+					border: 2px solid $second;
+				}
+				.title {
+					@include fontSize-fontWeight(14px, 600);
+					visibility: hidden;
+					color: $white;
+					transition: all 200ms ease-in-out;
+				}
+				&:hover {
+					.title {
+						visibility: visible;
+						display: block;
+					}
+				}
+			}
+		}
+	}
 }
