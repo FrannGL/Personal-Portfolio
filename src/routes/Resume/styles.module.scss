@@ -1,67 +1,153 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include width-height(100%, 100vh);
-	@include flex(row, center, center);
+	@include width-height(100%, 1500px);
+	@include flex(column, center, center);
+	padding: 20px;
 	z-index: 2;
 	position: relative;
 	background: $mainBlue;
+	margin-top: 600px;
 	.inner_container {
-		@include width-height(1200px, 100%);
-		@include flex(column, space-around, flex-start);
+		@include width-height(100%, 100%);
+		@include flex(column, center, center);
+		margin-top: 50px;
 		.cards_container {
 			@include width-height(100%, auto);
-			@include flex(row, center, center, 20px);
-			.left {
-				@include width-height(100%, 100%);
-				@include flex(column, space-between, flex-start, 75px);
-			}
+			@include flex(column, center, center, 20px);
+			background: $mainBlue;
+			margin-top: 50px;
 			.timeline {
-				@include width-height(30%, 60%);
-				position: relative;
-				@include flex(column, space-between, center);
-				&::before {
-					content: "";
-					position: absolute;
-					left: 50%;
-					transform: translateX(-50%);
-					top: -40px;
-					width: 5px;
-					height: 130%;
-					background: linear-gradient(to bottom, transparent, #3e5065, transparent);
-					display: block;
+				display: none;
+			}
+			.left,
+			.right {
+				@include width-height(100%, 100%);
+				@include flex(column, center, center, 20px);
+			}
+		}
+	}
+}
+
+@media (width >= $querySm) {
+	.container {
+		height: 1450px;
+	}
+}
+
+@media (width >= $queryMd) {
+	.container {
+		height: auto;
+		margin: 0;
+		.inner_container {
+			margin: 0;
+			.cards_container {
+				flex-direction: row;
+				.left {
+					align-items: flex-end;
 				}
-				.point {
-					color: $white;
+				.right {
+					align-items: flex-start;
+				}
+				.timeline {
+					@include width-height(100px, 450px);
 					position: relative;
+					@include flex(column, space-between, center);
 					&::before {
 						content: "";
 						position: absolute;
-						bottom: -12px;
-						left: 0;
-						height: 1px;
-						background: transparent linear-gradient(to right, transparent, $second, transparent);
+						left: 50%;
+						transform: translateX(-50%);
+						top: -100px;
+						width: 5px;
+						height: 700px;
+						background: linear-gradient(to bottom, transparent, #3e5065, transparent);
+						display: block;
 					}
-					&::after {
-						content: "";
-						position: absolute;
-						bottom: -16px;
-						left: calc(50% - 4px);
-						width: 8px;
-						height: 8px;
-						border-radius: 50%;
-						background: $stellBlue;
-						border: 1px solid $second;
-						transition: all 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
-						animation: glow 1s infinite ease-in-out;
-						box-shadow: 0 0 10px rgba(22, 192, 240, 0);
+					.point {
+						color: $white;
+						position: relative;
+						&::before {
+							content: "";
+							position: absolute;
+							bottom: -12px;
+							left: 0;
+							height: 1px;
+							background: transparent linear-gradient(to right, transparent, $second, transparent);
+						}
+						&::after {
+							content: "";
+							position: absolute;
+							bottom: -16px;
+							left: calc(50% - 4px);
+							width: 8px;
+							height: 8px;
+							border-radius: 50%;
+							background: $stellBlue;
+							border: 1px solid $second;
+							transition: all 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
+							animation: glow 1s infinite ease-in-out;
+							box-shadow: 0 0 10px rgba(22, 192, 240, 0);
+						}
 					}
 				}
 			}
+		}
+	}
+}
 
-			.right {
+@media (width >= $queryLg) {
+	.container {
+		@include flex(row, center, center);
+		z-index: 2;
+		position: relative;
+		background: $mainBlue;
+		.inner_container {
+			@include flex(column, center, center);
+			.cards_container {
 				@include width-height(100%, 100%);
-				@include flex(column, center, flex-start);
+				@include flex(row, center, center, 20px);
+				margin-top: 40px;
+				.left {
+					@include width-height(100%, 100%);
+					@include flex(column, center, flex-end, 20px);
+				}
+				.timeline {
+					width: 50px;
+				}
+				.right {
+					@include width-height(100%, 100%);
+					@include flex(column, center, flex-start);
+				}
+			}
+		}
+	}
+}
+
+@media (width >= $queryXl) {
+	.container {
+		.inner_container {
+			margin-top: 50px;
+			.cards_container {
+				height: 100vh;
+				.left {
+					justify-content: flex-start;
+					align-items: flex-end;
+					gap: 75px;
+				}
+				.timeline {
+					width: 100px;
+					height: 350px;
+					top: -100px;
+					&::before {
+						height: 550px;
+					}
+				}
+				.right {
+					justify-content: flex-start;
+					align-items: flex-start;
+					margin-top: 300px;
+				}
 			}
 		}
 	}

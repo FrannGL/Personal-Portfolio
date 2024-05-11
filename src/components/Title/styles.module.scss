@@ -35,16 +35,10 @@
 
 @media (width >= $queryMd) {
 	.title_container {
-		align-items: flex-start;
+		align-items: center;
 		.title {
 			font-size: 28px;
 		}
-	}
-}
-
-@media (width >= $queryLg) {
-	.title_container {
-		padding-left: 15px;
 	}
 }
 

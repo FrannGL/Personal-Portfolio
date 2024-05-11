@@ -123,7 +123,7 @@
 	}
 
 	.card_resume {
-		@include width-height(500px, auto);
+		@include width-height(300px, auto);
 		@include flex(column, center, center, 20px);
 		padding: 20px 10px;
 		background: $mainBlue;
@@ -131,7 +131,7 @@
 		box-shadow: 0 4px 5px rgba(37, 50, 66, 0.7);
 		position: relative;
 		.content {
-			@include flex(column, center, center, 20px);
+			@include flex(column, center, center, 15px);
 			.bag {
 				@include width-height(100%, 100px);
 				background-image: url("/assets/bag.png");
@@ -142,16 +142,16 @@
 				opacity: 0.12;
 				position: absolute;
 				top: -30px;
-				left: -30px;
+				left: -20px;
 				z-index: 6;
 			}
 			.title {
 				color: $second;
-				@include fontSize-fontWeight(16px, 600);
-				letter-spacing: 0.5px;
+				@include fontSize-fontWeight(14px, 600);
+				text-align: center;
 				span {
 					color: $white;
-					font-size: 14px;
+					font-size: 13px;
 				}
 			}
 			.dates {
@@ -161,22 +161,20 @@
 				padding-bottom: 20px;
 				.date {
 					color: $text;
-					@include fontSize-fontWeight(13px, 400);
+					@include fontSize-fontWeight(12px, 400);
 					letter-spacing: 0.7px;
 				}
 			}
+			.badges {
+				@include flex(row, center, center, 5px);
+				flex-wrap: wrap;
+			}
 			.description {
 				color: $white;
-				@include fontSize-fontWeight(13px, 300);
+				@include fontSize-fontWeight(12px, 300);
+				text-align: center;
 				letter-spacing: 0.7px;
 				line-height: 1.5;
-			}
-			.stack {
-				@include flex(row, center, center, 5px);
-				p {
-					@include fontSize-fontWeight(13px, 400);
-					color: $text;
-				}
 			}
 			.link {
 				@include flex(row, center, center, 10px);
@@ -224,6 +222,31 @@
 		}
 	}
 	@media (width >= $querySm) {
+		.card_resume {
+			width: 375px;
+			.content {
+				gap: 20px;
+				.title {
+					font-size: 15px;
+					span {
+						font-size: 14px;
+					}
+				}
+				.dates {
+					.date {
+						font-size: 13px;
+					}
+				}
+				.badges {
+					.badge {
+						@include width-height(80px, auto);
+					}
+				}
+				.description {
+					font-size: 13px;
+				}
+			}
+		}
 		.card_services {
 			.content {
 				.title {
@@ -236,6 +259,9 @@
 		}
 	}
 	@media (width >= $queryMd) {
+		.card_resume {
+			width: 330px;
+		}
 		.card_services {
 			.content {
 				.title {
@@ -248,6 +274,14 @@
 		}
 	}
 	@media (width >= $queryLg) {
+		.card_resume {
+			width: 370px;
+			.content {
+				.description {
+					font-size: 12px;
+				}
+			}
+		}
 		.card_services {
 			max-width: 350px;
 			&:hover {
@@ -275,6 +309,20 @@
 	}
 
 	@media (width >= $queryXl) {
+		.card_resume {
+			width: 500px;
+			.content {
+				.title {
+					font-size: 18px;
+					span {
+						font-size: 16px;
+					}
+				}
+				.description {
+					font-size: 14px;
+				}
+			}
+		}
 		.card_services {
 			max-width: auto;
 			padding: 30px 15px;
@@ -288,46 +336,4 @@
 			}
 		}
 	}
-	// .card_services {
-	// 	@include flex(column, center, center, 20px);
-	// 	padding: 30px 15px;
-	// 	background-color: $mainBlue;
-	// 	border-bottom: 2px solid $second;
-	// 	border-top-left-radius: 10px;
-	// 	border-top-right-radius: 10px;
-	// 	transition: all 300ms ease-in-out;
-	// 	&:hover {
-	// 		transform: translateY(-10px);
-	// 		.content {
-	// 			.circle {
-	// 				background: $second;
-	// 			}
-	// 			svg {
-	// 				path[fill="#16c0f0"] {
-	// 					fill: $white;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// 	.content {
-	// 		@include flex(column, center, center, 20px);
-	// 		.circle {
-	// 			@include width-height(55px, auto);
-	// 			@include flex(column, center, center, 5px);
-	// 			border-radius: 70%;
-	// 			border: 1px solid $second;
-	// 			padding: 15px;
-	// 		}
-	// 		.title {
-	// 			@include fontSize-fontWeight(20px, 600);
-	// 			color: $white;
-	// 			text-transform: uppercase;
-	// 		}
-	// 		.description {
-	// 			@include fontSize-fontWeight(14px, 400);
-	// 			color: $text;
-	// 			text-align: center;
-	// 		}
-	// 	}
-	// }
 }

@@ -1,7 +1,7 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include width-height(100%, 100vh);
+	@include width-height(100%, 1400px);
 	@include flex(column, center, center);
 	z-index: 2;
 	position: relative;
@@ -9,7 +9,6 @@
 	.inner_container {
 		@include width-height(100%, 100%);
 		@include flex(column, center, center);
-		margin-top: 600px;
 		.cards_container {
 			@include width-height(100%, auto);
 			@include flex(column, center, center, 20px);
@@ -22,6 +21,7 @@
 
 @media (width >= $queryMd) {
 	.container {
+		height: 100%;
 		.inner_container {
 			@include flex(column, center, flex-start, 40px);
 			margin: 0;
