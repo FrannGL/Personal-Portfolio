@@ -2,19 +2,61 @@
 
 .container {
 	@include width-height(100%, 100vh);
-	@include flex(row, center, center);
+	@include flex(column, center, center);
 	z-index: 2;
 	position: relative;
 	background: $darkBlue;
 	.inner_container {
-		@include width-height(1200px, 100%);
-		@include flex(column, space-around, flex-start);
+		@include width-height(100%, 100%);
+		@include flex(column, center, center);
+		margin-top: 600px;
 		.cards_container {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			@include width-height(100%, auto);
+			@include flex(column, center, center, 20px);
+			padding: 20px;
+			background: $darkBlue;
+			margin-top: 30px;
+		}
+	}
+}
+
+@media (width >= $queryMd) {
+	.container {
+		.inner_container {
+			@include flex(column, center, flex-start, 40px);
+			margin: 0;
+			padding: 20px;
+			.cards_container {
+				margin-top: 20px;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				justify-content: center;
+				align-items: center;
+				gap: 20px;
+			}
+		}
+	}
+}
+
+@media (width >= $queryLg) {
+	.container {
+		.inner_container {
 			justify-content: center;
 			align-items: center;
-			gap: 40px;
+			.cards_container {
+				grid-template-columns: 380px 380px;
+			}
+		}
+	}
+}
+
+@media (width >= $queryXl) {
+	.container {
+		.inner_container {
+			.cards_container {
+				grid-template-columns: 380px 380px 380px;
+				gap: 40px;
+			}
 		}
 	}
 }

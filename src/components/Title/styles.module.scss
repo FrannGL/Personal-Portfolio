@@ -42,6 +42,12 @@
 	}
 }
 
+@media (width >= $queryLg) {
+	.title_container {
+		padding-left: 15px;
+	}
+}
+
 @keyframes glow {
 	0% {
 		box-shadow: 0 0 10px rgba(22, 192, 240, 0);
