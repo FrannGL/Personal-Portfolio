@@ -13,7 +13,7 @@ const sections = [
   { id: "about", component: <About /> },
   { id: "services", component: <Services /> },
   { id: "resume", component: <Resume /> },
-  // { id: "portfolio", component: <Portfolio /> },
+  { id: "portfolio", component: <Portfolio /> },
   // { id: "contact", component: <Contact /> },
 ];
 
