@@ -1,22 +1,65 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include width-height(100%, 100vh);
-	@include flex(row, center, center);
+	@include width-height(100%, auto);
+	@include flex(column, center, center);
 	z-index: 2;
 	position: relative;
 	background: $darkBlue;
+	margin-top: 780px;
+	padding: 30px 0;
 	.inner_container {
-		@include width-height(1200px, 100%);
-		@include flex(column, space-around, flex-start, 70px);
+		@include width-height(100%, 100%);
+		@include flex(column, center, center);
 		.list_container {
 			@include width-height(100%, auto);
+			margin: 50px 0;
 		}
 		.cards_container {
 			@include width-height(100%, auto);
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 50px;
+			@include flex(column, center, center, 30px);
+		}
+	}
+}
+
+@media (width >= $querySm) {
+	.container {
+		margin-top: 690px;
+	}
+}
+
+@media (width >= $queryMd) {
+	.container {
+		margin-top: 210px;
+		.inner_container {
+			.cards_container {
+				display: grid;
+				grid-template-columns: 320px 320px;
+			}
+		}
+	}
+}
+
+@media (width >= $queryLg) {
+	.container {
+		margin-top: 70px;
+		.inner_container {
+			height: auto;
+			.cards_container {
+				height: auto;
+				grid-template-columns: 1fr 1.1fr;
+			}
+		}
+	}
+}
+
+@media (width >= $queryXl) {
+	.container {
+		height: 100vh;
+		.inner_container {
+			.cards_container {
+				grid-template-columns: repeat(3, 1fr);
+			}
 		}
 	}
 }

@@ -1,68 +1,56 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include width-height(100%, 100vh);
-	@include flex(row, center, center);
+	@include width-height(100%, 100%);
+	@include flex(column, center, center);
 	z-index: 2;
 	position: relative;
 	background: $mainBlue;
 	.inner_container {
-		@include width-height(1200px, auto);
-		@include flex(row, space-between, center, 50px);
+		@include width-height(100%, 100%);
+		@include flex(column, center, center);
 		.profile_container {
-			position: relative;
+			display: none;
 			.profile {
-				@include width-height(400px, auto);
-				object-fit: contain;
-				border-top-left-radius: 10px;
-				border-top-right-radius: 10px;
-				position: relative;
-				z-index: 10;
-			}
-			.border {
-				@include width-height(400px, 575px);
-				position: absolute;
-				top: 14px;
-				right: -10px;
-				background: $slateBlue;
-				box-shadow: 6px 6px 8px 0px rgba(0, 0, 0, 0.25);
+				display: none;
 			}
 		}
 		.about_container {
 			@include width-height(100%, 100%);
-			@include flex(column, flex-start, flex-start);
-			padding: 10px;
-			margin-top: 40px;
+			@include flex(column, center, center, 25px);
+			margin-top: 20px;
+			padding: 30px 15px;
 			.content {
 				@include width-height(100%, auto);
-				@include flex(column, center, flex-start, 30px);
-				margin-top: 50px;
+				@include flex(column, center, center, 10px);
+
 				.names {
-					@include flex(column, center, flex-start, 10px);
+					@include flex(column, center, flex-start, 5px);
 					.name {
-						@include fontSize-fontWeight(28px, 600);
+						@include fontSize-fontWeight(20px, 600);
 						color: $white;
 					}
 					.subname {
-						@include fontSize-fontWeight(16px, 600);
+						@include fontSize-fontWeight(13px, 600);
 						color: $second;
 					}
 				}
 				.leyends {
 					@include flex(column, center, flex-start, 10px);
 					.leyend {
-						max-width: 600px;
+						max-width: 375px;
 						@include fontSize-fontWeight(14px, 400);
 						@include text;
+						text-align: center;
 					}
 				}
 			}
 			.resume {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
+				@include width-height(100%, auto);
+				@include flex(column, center, center);
 				.item {
 					@include flex(row, flex-start, flex-start, 10px);
-					padding: 10px 0;
+					padding: 5px 0;
 					color: $second;
 					@include fontSize-fontWeight(14px, 600);
 					.content {
@@ -73,7 +61,171 @@
 				}
 			}
 			.btn_container {
-				padding: 20px 0;
+				@include width-height(100%, auto);
+				@include flex(column, center, center);
+			}
+		}
+	}
+}
+
+@media (width >= $querySm) {
+	.container {
+		.inner_container {
+			.about_container {
+				justify-content: center;
+				padding: 0;
+				gap: 45px;
+				.content {
+					.leyends {
+						.leyend {
+							max-width: 500px;
+						}
+					}
+				}
+				.resume {
+					display: grid;
+					grid-template-columns: 275px 275px;
+					gap: 2px;
+				}
+			}
+		}
+	}
+}
+
+@media (width >= $queryMd) {
+	.container {
+		.inner_container {
+			display: grid;
+			grid-template-columns: 320px 400px;
+			.profile_container {
+				display: block;
+				position: relative;
+				@include flex(row, flex-start, center);
+				.profile {
+					display: block;
+					@include width-height(275px, auto);
+					object-fit: contain;
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+					position: relative;
+					z-index: 10;
+				}
+				.border {
+					@include width-height(285px, 385px);
+					position: absolute;
+					top: 5px;
+					left: 0;
+					background: $slateBlue;
+					box-shadow: 6px 6px 8px 0px rgba(0, 0, 0, 0.25);
+				}
+			}
+			.about_container {
+				align-items: flex-start;
+				gap: 40px;
+				.content {
+					justify-content: flex-start;
+					align-items: flex-start;
+					.names {
+						.name {
+							font-size: 24px;
+						}
+						.subname {
+							font-size: 14px;
+						}
+					}
+					.leyends {
+						.leyend {
+							max-width: 400px;
+							font-size: 13px;
+							text-align: start;
+						}
+					}
+				}
+				.resume {
+					grid-template-columns: 185px 215px;
+					.item {
+						font-size: 11px;
+					}
+				}
+				.btn_container {
+					justify-content: flex-start;
+				}
+			}
+		}
+	}
+}
+
+@media (width >= $queryLg) {
+	.container {
+		.inner_container {
+			max-width: 1200px;
+			grid-template-columns: 40% 58%;
+			.profile_container {
+				justify-content: center;
+				.profile {
+					width: 300px;
+				}
+				.border {
+					@include width-height(280px, 435px);
+					left: 85px;
+				}
+			}
+			.about_container {
+				.content {
+					.names {
+						gap: 10px;
+						.name {
+							font-size: 24px;
+						}
+						.subname {
+							font-size: 18px;
+						}
+					}
+					.leyends {
+						.leyend {
+							max-width: 440px;
+						}
+					}
+				}
+				.resume {
+					grid-template-columns: 40% 60%;
+					.item {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (width >= $queryXl) {
+	.container {
+		.inner_container {
+			max-width: 1440px;
+			.profile_container {
+				.profile {
+					width: 350px;
+				}
+				.border {
+					left: 130px;
+					@include width-height(350px, 510px);
+				}
+			}
+			.about_container {
+				.content {
+					.leyends {
+						.leyend {
+							max-width: 600px;
+							font-size: 14px;
+						}
+					}
+				}
+				.resume {
+					gap: 10px;
+					.item {
+						font-size: 14px;
+					}
+				}
 			}
 		}
 	}

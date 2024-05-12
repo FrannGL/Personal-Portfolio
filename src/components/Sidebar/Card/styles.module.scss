@@ -2,7 +2,7 @@
 
 .container,
 .container_noselected {
-	@include width-height(275px, auto);
+	@include width-height(100%, auto);
 	@include flex(row, flex-start, center, 25px);
 	background-color: $mainBlue;
 	padding: 20px 15px;
@@ -37,5 +37,11 @@
 		path[fill="#fff"] {
 			fill: $second;
 		}
+	}
+}
+
+@media (min-width: $queryLg) {
+	.container {
+		width: 275px;
 	}
 }
