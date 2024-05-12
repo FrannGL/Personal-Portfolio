@@ -19,11 +19,11 @@
 			@include flex(column, center, center, 15px);
 			.title {
 				color: $second;
-				@include fontSize-fontWeight(16px, 600);
+				@include fontSize-fontWeight(14px, 600);
 				letter-spacing: 0.5px;
 			}
 			.description {
-				@include fontSize-fontWeight(14px, 400);
+				@include fontSize-fontWeight(12px, 400);
 				color: $text;
 			}
 			.link {

@@ -1,30 +1,30 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include width-height(100%, 100vh);
-	@include flex(row, center, center);
+	@include width-height(100%, 100%);
+	@include flex(column, flex-start, center);
 	z-index: 2;
 	position: relative;
 	background: $mainBlue;
+	margin-top: 1160px;
 	.inner_container {
-		@include width-height(1200px, 100%);
-		@include flex(column, space-around, flex-start, 75px);
+		@include width-height(100%, auto);
+		@include flex(column, center, center);
+		padding: 0 20px;
+		margin-top: 100px;
 		.form_container {
-			@include width-height(100%, 650px);
-			display: grid;
-			grid-template-columns: 32% 64.5%;
-			gap: 40px;
+			@include width-height(100%, auto);
+			max-width: 500px;
+			@include flex(column, center, center);
+			margin-top: 50px;
 			.fade {
-				@include width-height(100%, 100%);
+				@include width-height(100%, auto);
 				.resume_container {
-					@include width-height(100%, 100%);
-					@include flex(column, space-around, center, 20px);
-					background: $darkBlue;
-					border: 3px solid #374757;
+					display: none;
 				}
 				.form {
-					@include width-height(100%, 100%);
-					@include flex(column, space-between, flex-start);
+					@include width-height(100%, auto);
+					@include flex(column, center, center);
 					background: $darkBlue;
 					border: 3px solid #374757;
 					padding: 20px;
@@ -38,6 +38,72 @@
 						height: 19px;
 						opacity: 0;
 						border: 1px solid white;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (width >= $querySm) {
+	.container {
+		margin-top: 1310px;
+	}
+}
+
+@media (width >= $queryMd) {
+	.container {
+		margin-top: 280px;
+		.inner_container {
+			.form_container {
+				max-width: 600px;
+			}
+		}
+	}
+}
+
+@media (width >= $queryLg) {
+	.container {
+		margin-top: 400px;
+		.inner_container {
+			.form_container {
+				height: 100%;
+				max-width: auto;
+				display: grid;
+				grid-template-columns: 330px 400px;
+				gap: 20px;
+				.fade {
+					.resume_container {
+						display: block;
+						@include width-height(100%, 520px);
+						@include flex(column, space-around, center);
+						background: $darkBlue;
+						border: 3px solid #374757;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (width >= $queryXl) {
+	.container {
+		margin: 0;
+		.inner_container {
+			.form_container {
+				grid-template-columns: 400px 600px;
+				height: 100%;
+				.fade {
+					.resume_container {
+						display: block;
+						@include width-height(100%, 700px);
+						@include flex(column, space-around, center, 20px);
+						background: $darkBlue;
+						border: 3px solid #374757;
+					}
+					.form {
+						height: 700px;
+						justify-content: space-between;
 					}
 				}
 			}
