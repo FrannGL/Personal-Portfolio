@@ -33,40 +33,25 @@
 	}
 	.socials {
 		@include width-height(100%, auto);
-		// @include width-height(auto, auto);
 		z-index: 2;
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		// top: 30%;
-		// left: 70px;
 		.content {
 			@include width-height(100%, auto);
 			@include flex(row, center, center, 5px);
 			position: relative;
 			.title {
-				// @include width-height(305px, auto);
 				@include fontSize-fontWeight(14px, 400);
-				// transform: rotate(90deg);
 				text-transform: uppercase;
 				color: $white;
-				// position: absolute;
 				padding: 10px;
 				padding-right: 15px;
 				border-right: 2px solid $second;
 			}
-			// .line {
-			// 	@include width-height(2px, 30px);
-			// 	background: $second;
-			// 	position: absolute;
-			// 	left: 42%;
-			// }
 			.list {
 				@include width-height(auto, 140px);
 				@include flex(row, center, center, 20px);
-				// position: absolute;
-				// bottom: 0;
-				// right: 28px;
 				.item {
 					.link {
 						svg {

@@ -1,4 +1,3 @@
-import styles from "./styles.module.scss";
 import { useLayout } from "@/context/LayoutContext";
 import { useEffect } from "react";
 import HomePage from "@/routes/Home";
@@ -34,7 +33,7 @@ const SectionsContainer = () => {
 	return (
 		<section>
 			{sections.map((section, index) => (
-				<div className={styles.container} id={section.id} key={`${section.id}-${index}`}>
+				<div id={section.id} key={`${section.id}-${index}`}>
 					{section.component}
 				</div>
 			))}

@@ -1,7 +1,7 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include width-height(100%, 100%);
+	@include width-height(100%, 100vh);
 	@include flex(column, center, center);
 	z-index: 2;
 	position: relative;
@@ -9,6 +9,7 @@
 	.inner_container {
 		@include width-height(100%, 100%);
 		@include flex(column, center, center);
+		margin-top: 70px;
 		.profile_container {
 			display: none;
 			.profile {
@@ -18,7 +19,6 @@
 		.about_container {
 			@include width-height(100%, 100%);
 			@include flex(column, center, center, 25px);
-			margin-top: 20px;
 			padding: 30px 15px;
 			.content {
 				@include width-height(100%, auto);
