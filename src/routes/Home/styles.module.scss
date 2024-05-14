@@ -35,7 +35,7 @@
 		@include width-height(100%, auto);
 		z-index: 2;
 		position: absolute;
-		bottom: 0;
+		bottom: 50px;
 		left: 0;
 		.content {
 			@include width-height(100%, auto);
