@@ -6,7 +6,6 @@
 	z-index: 2;
 	position: relative;
 	background: $mainBlue;
-	border: 1px solid white;
 	.inner_container {
 		@include width-height(100%, 100%);
 		@include flex(column, center, center);
