@@ -1,90 +1,91 @@
 {
-  "dict": {
-    "home": {
-      "initial_text": "Soy",
-      "btn01": "Ver más",
-      "btn02": "Descargar CV",
-      "follow": "Seguime"
-    },
-    "about": {
-      "title": "Soy Franco Galluccio",
-      "subtitle": "Soy Desarrollador Web Full Stack",
-      "description01": "Soy un profesional altamente motivado, con demostradas habilidades de proactividad, responsabilidad y trabajo en equipo. Me destaco por mi capacidad para adaptarme rápidamente a nuevos entornos y afrontar desafíos con creatividad y determinación. Mi compromiso con la excelencia me lleva a cumplir resultados de alta calidad y cumplimiento constante de los plazos.",
-      "description02": "Además, tengo fuertes habilidades de comunicación y colaboración, lo que me permite trabajar de manera efectiva con colegas y clientes. Siempre estoy dispuesto a aprender y contribuir positivamente al éxito del equipo.",
-      "list01": "Nombre",
-      "list02": "Edad",
-      "list03": "Teléfono",
-      "list04": "Ubicación",
-      "list05": "Web",
-      "list06": "Email",
-      "btn": "Descargar CV"
-    },
-    "titles": {
-      "home": "Inicio",
-      "about": "Sobre mi",
-      "services": "Servicios",
-      "resume": "Resumen",
-      "portfolio": "Portfolio",
-      "contact": "Contacto"
-    },
-    "services": {
-      "title01": "Diseño creativo",
-      "description01": "Soluciones en base a diseños creativos. Transformo ideas en experiencias visuales cautivadoras, combinando innovación y estética para captar toda la atención del ciente.",
-      "title02": "Marca",
-      "description02": "Llevo a tu marca a nuevos niveles, creando identidades distintivas que reflejan la esencia del negocio, ayudándote a destacar y conectar con tu audiencia de manera auténtica.",
-      "title03": "Interfaz de usuario",
-      "description03": "Mejoro la interacción con interfaces de usuario elegantes y funcionales, diseñando experiencias intuitivas que facilitan la navegación, asegurando fluidez y atractivo.",
-      "title04": "Experiencia de usuario",
-      "description04": "Priorizo al usuario en el centro de todo lo que hago. Mi servicio de experiencia del usuario se enfoca en crear recorridos suaves y envolventes, que hagan que los usuarios se sientan valorados y comprendidos.",
-      "title05": "Código limpio",
-      "description05": "La calidad y la claridad son la base de mi código. Ofreciendo un servicio de código limpio, puedes confiar en soluciones robustas, seguras y escalables que impulsarán tu proyecto a largo plazo.",
-      "title06": "Soporte rápido",
-      "description06": "El soporte rápido y eficiente está a solo un clic de distancia. Mi responsabilidad frente a posibles problemas técnicos asegura que siempre tengas el respaldo que necesitas para mantener el negocio en marcha."
-    },
-    "portfolio": {
-      "categories": {
-        "all": "Todos",
-        "frontend": "Frontend",
-        "full": "Full Stack"
-      },
-      "projects": {
-        "description01": "Tienda en línea para una cervecería, creada con React. Incluye navegación por rutas, gestión de estados globales con Context, estilos personalizados con Material UI y adaptable a todas las pantallas. El diseño limpio y funcional permite a los clientes explorar y comprar cervezas artesanales con facilidad.",
-        "description02": "Landing Page institucional, creada con Next.js. Se basa en un elegante diseño de Figma adaptable a todas las pantallas, utilizando el preprocesador SASS para estilizar de forma dinámica. La página ofrece una experiencia fluida y atractiva, reflejando la imagen profesional de la empresa.",
-        "description03": "Landing Page institucional, desarrollada con Next.js y Typescript para mayor robustez. El diseño sigue un modelo de Figma y utiliza SASS para estilos personalizados. Esta página presenta un flujo interactivo y muestra de forma clara los beneficios del servicio.",
-        "description04": "Plataforma de e-commerce para una cadena de hamburguesas, desarrollada con un enfoque Full Stack. Administración de usuarios y roles, productos, carritos y otras funcionalidades son parte de este proyecto. El backend utiliza Express.js y MongoDB, mientras que el frontend emplea Handlebars para un diseño dinámico. Especial énfasis en la arquitectura de capas, que garantiza un código seguro y eficiente.",
-        "description05": "Tienda en línea de indumentaria, creada en colaboración con otro desarrollador. La misma permite navegar entre las distintas categorías, administrar usuarios, agregar productos a favoritos, crear un carrito de compras, entre otras. Backend construído con Express.js y MongoDB, mientras que el frontend usa React y Vite para una respuesta rápida. El proyecto destaca por su coordinación y trabajo en equipo.",
-        "description06": "Proyecto tipo CRM para gestionar usuarios y códigos QR relacionados con datos de mascotas, donde el cliente va a poder impirmir en una chapa el código QR y al escanearlo lo redirige a una landing page con los datos referentes a su mascota. El frontend usa Next.js, Typescript y SASS para un diseño moderno, mientras que el backend se basa en Express.js y MongoDB, siguiendo una arquitectura de capas para mayor seguridad y eficiencia."
-      }
-    },
-    "resume": {
-      "title01": "Desarrollador de Frontend",
-      "description01": "Como Desarrollador de Frontend en Notimation, me desempeño en la creación de interfaces de usuario atractivas y funcionales, implementando componentes reutilizables e interacción con servidores para la gestión de datos a través de API. Además, he desarrollado soluciones personalizadas, colaborando con equipos multidisciplinarios para entregar productos de alta calidad.",
-      "title02": "Carrera de Desarrollo Full Stack",
-      "description02": "Mi camino para convertirme en desarrollador Full Stack, donde me embarque en un emocionante viaje de aprendizaje con la pila de tecnologías MERN: MongoDB, Express.js, React y Node.js. A lo largo de mi cursada, también te familiarize con herramientas complementarias como Git para el control de versiones, Docker para la contenedorización, y tecnologías relacionadas con la nube para desplegar tus aplicaciones. El aprendizaje no solo fue técnico, sino también colaborativo, permitiéndome trabajar en proyectos en equipo, practicar metodologías ágiles y recibir feedback constructivo.",
-      "title03": "Bachiller en Ciencias Naturales",
-      "description03": "Durante mi tiempo en la secundaria, donde cursé el bachillerato en ciencias naturales, tuve la oportunidad de sumergirme en un mundo fascinante de descubrimientos y aprendizajes. Este enfoque educativo me permitió explorar temas relacionados con la biología, la química y la física, ampliando mis conocimientos sobre el funcionamiento del mundo natural y sus fenómenos."
-    },
-    "contact": {
-      "resume": {
-        "location": "Locacion",
-        "email": "Email",
-        "phone": "Telefono",
-        "website": "Sitio web"
-      },
-      "form": {
-        "name": "Nombre",
-        "email": "Email",
-        "subject": "Asunto",
-        "subject_placeholder": "Oferta de trabajo",
-        "message": "Mensaje",
-        "message_placeholder": "Escribe tu mensaje ...",
-        "btn": "Enviar mensaje"
-      }
-    },
-    "toast": {
-      "success": "Formulario enviado correctamente",
-      "error_front": "Error al enviar el formulario",
-      "error_back": "Error en el servidor"
-    }
-  }
+	"dict": {
+		"home": {
+			"initial_text": "Soy",
+			"btn01": "Ver más",
+			"btn02": "Descargar CV",
+			"follow": "Seguime"
+		},
+		"about": {
+			"title": "Soy Franco Galluccio",
+			"subtitle": "Soy Desarrollador Web Full Stack",
+			"description01": "Soy un profesional altamente motivado, con demostradas habilidades de proactividad, responsabilidad y trabajo en equipo. Me destaco por mi capacidad para adaptarme rápidamente a nuevos entornos y afrontar desafíos con creatividad y determinación. Mi compromiso con la excelencia me lleva a cumplir resultados de alta calidad y cumplimiento constante de los plazos.",
+			"description02": "Además, tengo fuertes habilidades de comunicación y colaboración, lo que me permite trabajar de manera efectiva con colegas y clientes. Siempre estoy dispuesto a aprender y contribuir positivamente al éxito del equipo.",
+			"list01": "Nombre",
+			"list02": "Edad",
+			"list03": "Teléfono",
+			"list04": "Ubicación",
+			"list05": "Web",
+			"list06": "Email",
+			"btn": "Descargar CV"
+		},
+		"titles": {
+			"home": "Inicio",
+			"about": "Sobre mi",
+			"services": "Servicios",
+			"resume": "Resumen",
+			"portfolio": "Portfolio",
+			"contact": "Contacto"
+		},
+		"services": {
+			"title01": "Diseño creativo",
+			"description01": "Soluciones en base a diseños creativos. Transformo ideas en experiencias visuales cautivadoras, combinando innovación y estética para captar toda la atención del ciente.",
+			"title02": "Marca",
+			"description02": "Llevo a tu marca a nuevos niveles, creando identidades distintivas que reflejan la esencia del negocio, ayudándote a destacar y conectar con tu audiencia de manera auténtica.",
+			"title03": "Interfaz de usuario",
+			"description03": "Mejoro la interacción con interfaces de usuario elegantes y funcionales, diseñando experiencias intuitivas que facilitan la navegación, asegurando fluidez y atractivo.",
+			"title04": "Experiencia de usuario",
+			"description04": "Priorizo al usuario en el centro de todo lo que hago. Mi servicio de experiencia del usuario se enfoca en crear recorridos suaves y envolventes, que hagan que los usuarios se sientan valorados y comprendidos.",
+			"title05": "Código limpio",
+			"description05": "La calidad y la claridad son la base de mi código. Ofreciendo un servicio de código limpio, puedes confiar en soluciones robustas, seguras y escalables que impulsarán tu proyecto a largo plazo.",
+			"title06": "Soporte rápido",
+			"description06": "El soporte rápido y eficiente está a solo un clic de distancia. Mi responsabilidad frente a posibles problemas técnicos asegura que siempre tengas el respaldo que necesitas para mantener el negocio en marcha."
+		},
+		"portfolio": {
+			"categories": {
+				"all": "Todos",
+				"frontend": "Frontend",
+				"full": "Full Stack"
+			},
+			"projects": {
+				"description01": "Tienda en línea para una cervecería, creada con React. Incluye navegación por rutas, gestión de estados globales con Context, estilos personalizados con Material UI y adaptable a todas las pantallas. El diseño limpio y funcional permite a los clientes explorar y comprar cervezas artesanales con facilidad.",
+				"description02": "Landing Page institucional, creada con Next.js. Se basa en un elegante diseño de Figma adaptable a todas las pantallas, utilizando el preprocesador SASS para estilizar de forma dinámica. La página ofrece una experiencia fluida y atractiva, reflejando la imagen profesional de la empresa.",
+				"description03": "Landing Page institucional, desarrollada con Next.js y Typescript para mayor robustez. El diseño sigue un modelo de Figma y utiliza SASS para estilos personalizados. Esta página presenta un flujo interactivo y muestra de forma clara los beneficios del servicio.",
+				"description04": "Plataforma de e-commerce para una cadena de hamburguesas, desarrollada con un enfoque Full Stack. Administración de usuarios y roles, productos, carritos y otras funcionalidades son parte de este proyecto. El backend utiliza Express.js y MongoDB, mientras que el frontend emplea Handlebars para un diseño dinámico. Especial énfasis en la arquitectura de capas, que garantiza un código seguro y eficiente.",
+				"description05": "Tienda en línea de indumentaria, creada en colaboración con otro desarrollador. La misma permite navegar entre las distintas categorías, administrar usuarios, agregar productos a favoritos, crear un carrito de compras, entre otras. Backend construído con Express.js y MongoDB, mientras que el frontend usa React y Vite para una respuesta rápida. El proyecto destaca por su coordinación y trabajo en equipo.",
+				"description06": "Proyecto tipo CRM para gestionar usuarios y códigos QR relacionados con datos de mascotas, donde el cliente va a poder impirmir en una chapa el código QR y al escanearlo lo redirige a una landing page con los datos referentes a su mascota. El frontend usa Next.js, Typescript y SASS para un diseño moderno, mientras que el backend se basa en Express.js y MongoDB, siguiendo una arquitectura de capas para mayor seguridad y eficiencia."
+			}
+		},
+		"resume": {
+			"title01": "Desarrollador de Frontend",
+			"description01": "Como Desarrollador de Frontend en Notimation, me desempeño en la creación de interfaces de usuario atractivas y funcionales, implementando componentes reutilizables e interacción con servidores para la gestión de datos a través de API. Además, he desarrollado soluciones personalizadas, colaborando con equipos multidisciplinarios para entregar productos de alta calidad.",
+			"title02": "Carrera de Desarrollo Full Stack",
+			"description02": "Mi camino para convertirme en desarrollador Full Stack, donde me embarque en un emocionante viaje de aprendizaje con la pila de tecnologías MERN: MongoDB, Express.js, React y Node.js. A lo largo de mi cursada, también te familiarize con herramientas complementarias como Git para el control de versiones, Docker para la contenedorización, y tecnologías relacionadas con la nube para desplegar tus aplicaciones. El aprendizaje no solo fue técnico, sino también colaborativo, permitiéndome trabajar en proyectos en equipo, practicar metodologías ágiles y recibir feedback constructivo.",
+			"title03": "Bachiller en Ciencias Naturales",
+			"description03": "Durante mi tiempo en la secundaria, donde cursé el bachillerato en ciencias naturales, tuve la oportunidad de sumergirme en un mundo fascinante de descubrimientos y aprendizajes. Este enfoque educativo me permitió explorar temas relacionados con la biología, la química y la física, ampliando mis conocimientos sobre el funcionamiento del mundo natural y sus fenómenos."
+		},
+		"contact": {
+			"resume": {
+				"location": "Locacion",
+				"email": "Email",
+				"phone": "Telefono",
+				"website": "Sitio web"
+			},
+			"form": {
+				"name": "Nombre",
+				"email": "Email",
+				"subject": "Asunto",
+				"subject_placeholder": "Oferta de trabajo",
+				"message": "Mensaje",
+				"message_placeholder": "Escribe tu mensaje ...",
+				"btn": "Enviar mensaje",
+				"loading": "Enviando"
+			}
+		},
+		"toast": {
+			"success": "Formulario enviado correctamente",
+			"error_front": "Error al enviar el formulario",
+			"error_back": "Error en el servidor"
+		}
+	}
 }

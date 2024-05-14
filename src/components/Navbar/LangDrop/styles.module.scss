@@ -26,7 +26,7 @@
 		list-style: none;
 		position: absolute;
 		cursor: pointer;
-		top: -38px;
+		top: 38px;
 		transition: all 0.3s ease;
 		.list_text {
 			@include flex(column, center, center);
@@ -49,5 +49,13 @@
 		opacity: 0;
 		overflow: hidden;
 		max-height: 0px;
+	}
+}
+
+@media (width >= $queryLg) {
+	.container {
+		.list_container {
+			top: -38px;
+		}
 	}
 }

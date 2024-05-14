@@ -28,6 +28,7 @@ const Contact = () => {
 		subject: "",
 		message: "",
 	});
+	const [loading, setLoading] = useState(false);
 	const [checkValidation, setCheckValidation] = useState(false);
 	const errors = useFormValidator(formData);
 	const { notify, notifyError } = useMessageToast();
@@ -70,8 +71,10 @@ const Contact = () => {
 
 	const sendForm = async () => {
 		try {
+			setLoading(true);
 			const response = await POST("send-email", formData);
 			if (response.statusCode === 201) {
+				setLoading(false);
 				notify(dict("toast.success"));
 				setFormData({
 					name: "",
@@ -153,7 +156,7 @@ const Contact = () => {
 								onChange={handleChange}
 							/>
 							<p className={checkValidation && errors.message ? styles.error : styles.error_hidden}>{errors.message}</p>
-							<Button title={dict("contact.form.btn")} styleName='second' />
+							<Button title={dict("contact.form.btn")} styleName='second' loading={loading} />
 						</form>
 					</Fade>
 				</div>
