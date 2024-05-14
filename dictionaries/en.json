@@ -45,15 +45,16 @@
 			"categories": {
 				"all": "All",
 				"frontend": "Frontend",
-				"full": "Full Stack"
+				"full": "Full Stack",
+				"mobile": "Mobile App"
 			},
 			"projects": {
 				"description01": "Online store for a brewery, built with React. Includes route navigation, global state management with Context, custom styles with Material UI and adaptable to all screens. Clean and functional design allows customers to explore and buy craft beers with ease.",
 				"description02": "Institutional Landing Page, created with Next.js. It is based on an elegant Figma design adaptable to all screens, using the SASS preprocessor to stylize dynamically. The page offers a fluid and attractive experience, reflecting the professional image of the company.",
 				"description03": "Institutional Landing Page, developed with Next.js and Typescript for greater robustness. The design follows a Figma model and uses SASS for custom styles. This page presents an interactive flow and clearly shows the benefits of the service. ",
 				"description04": "E-commerce platform for a hamburger chain, developed with a Full Stack approach. User and role management, products, carts and other functionalities are part of this project. The backend uses Express.js and MongoDB, while the frontend uses Handlebars for a dynamic design. Special emphasis on layered architecture, which guarantees safe and efficient code.",
-				"description05": "Online clothing store, created in collaboration with another developer. It allows you to navigate between the different categories, manage users, add products to favorites, create a shopping cart, among others. Backend built with Express.js and MongoDB, while the frontend uses React and Vite for rapid response. The project stands out for its coordination and teamwork.",
-				"description06": "CRM type project to manage users and QR codes related to pet data, where the client will be able to print the QR code on a badge and when scanning it, it will redirect them to a landing page with the data related to their pet. The frontend uses Next.js, Typescript and SASS for a modern design, while the backend is based on Express.js and MongoDB, following a layered architecture for security and efficiency."
+				"description05": "CRM type project to manage users and QR codes related to pet data, where the client will be able to print the QR code on a badge and when scanning it, it will redirect them to a landing page with the data related to their pet. The frontend uses Next.js, Typescript and SASS for a modern design, while the backend is based on Express.js and MongoDB, following a layered architecture for security and efficiency.",
+				"description06": "Mobile app built with React Native and Expo, integrating Redux Toolkit and Redux Toolkit Query for global status and API requests. Firebase handles the database and authentication. React-native is used for notifications. Toast-message. Expo-image-picker makes it easy to upload profile photos. Additionally, Expo-location is used with the Google Platform API for geolocation."
 			}
 		},
 		"resume": {

@@ -2,7 +2,9 @@
 
 .list {
 	@include width-height(100%, auto);
-	@include flex(row, center, center, 10px);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
 	.item {
 		@include main-btn;
 		padding: 10px 15px;
@@ -21,5 +23,11 @@
 		.item {
 			padding: 10px 25px;
 		}
+	}
+}
+
+@media (width >= $queryMd) {
+	.list {
+		@include flex(row, center, center, 10px);
 	}
 }
