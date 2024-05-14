@@ -13,7 +13,11 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
 	title: "Hey!👋 Franco Galluccio Portfolio",
-	description: "Personal website",
+	description: "Personal site",
+	openGraph: {
+		title: "Hey!👋 Franco Galluccio Portfolio",
+		description: "Personal site",
+	},
 };
 
 export default function RootLayout({
