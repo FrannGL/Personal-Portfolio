@@ -9,7 +9,8 @@
 	.inner_container {
 		@include width-height(100%, 100%);
 		@include flex(column, center, center);
-		padding: 30px 20px;
+		padding: 0 20px;
+		padding-top: 30px;
 		.form_container {
 			@include width-height(100%, auto);
 			max-width: 500px;
@@ -27,6 +28,8 @@
 					border: 3px solid #374757;
 					padding: 20px;
 					.error {
+						@include width-height(100%, 30px);
+						@include flex(row, flex-start, center);
 						opacity: 1;
 						@include fontSize-fontWeight(14px, 400);
 						color: $error;
@@ -55,7 +58,7 @@
 
 @media (width >= $queryLg) {
 	.container {
-		margin-top: 400px;
+		margin: 0;
 		.inner_container {
 			.form_container {
 				height: 100%;

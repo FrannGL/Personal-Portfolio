@@ -7,6 +7,7 @@
 	z-index: 2;
 	position: relative;
 	background: $mainBlue;
+	overflow: hidden;
 	.inner_container {
 		@include width-height(100%, 100%);
 		@include flex(column, center, center);
@@ -36,7 +37,7 @@
 
 @media (width >= $queryMd) {
 	.container {
-		height: auto;
+		@include width-height(100vw, auto);
 		margin: 0;
 		.inner_container {
 			margin: 0;
@@ -104,7 +105,7 @@
 		z-index: 2;
 		position: relative;
 		background: $mainBlue;
-		margin-top: 40px;
+		margin: 0;
 		.inner_container {
 			@include flex(column, center, center);
 			.cards_container {

@@ -7,7 +7,7 @@
 @media (width >= $queryLg) {
 	.container {
 		@include width-height(275px, 100%);
-		@include flex(column, flex-start, center, 60px);
+		@include flex(column, flex-start, center, 20px);
 		background: $mainBlue;
 		overflow-y: auto;
 		position: relative;
@@ -33,7 +33,7 @@
 			@include width-height(100%, auto);
 			@include flex(column, center, center);
 			.logo {
-				@include width-height(175px, auto);
+				@include width-height(150px, auto);
 				object-fit: contain;
 			}
 		}
@@ -70,5 +70,16 @@
 	.container {
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
+	}
+}
+
+@media (width >= $queryXl) {
+	.container {
+		gap: 60px;
+		.logo_container {
+			.logo {
+				width: 175px;
+			}
+		}
 	}
 }

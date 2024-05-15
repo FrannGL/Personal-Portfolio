@@ -43,5 +43,14 @@
 @media (min-width: $queryLg) {
 	.container {
 		width: 275px;
+		padding: 17px;
+		padding-left: 25px;
+	}
+}
+
+@media (min-width: $queryXl) {
+	.container {
+		padding: 20px 15px;
+		padding-left: 25px;
 	}
 }
