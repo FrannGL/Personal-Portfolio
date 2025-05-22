@@ -1,106 +1,106 @@
 @import "@/styles/theme.scss";
 
 .container {
-	@include width-height(100%, 100vh);
-	@include flex(column, flex-start, center);
-	z-index: 2;
-	position: relative;
-	background: $mainBlue;
-	.inner_container {
-		@include width-height(100%, 100%);
-		@include flex(column, center, center);
-		padding: 0 20px;
-		padding-top: 30px;
-		.form_container {
-			@include width-height(100%, auto);
-			max-width: 500px;
-			@include flex(column, center, center);
-			margin-top: 35px;
-			.fade {
-				@include width-height(100%, auto);
-				.resume_container {
-					display: none;
-				}
-				.form {
-					@include width-height(100%, auto);
-					@include flex(column, center, center);
-					background: $darkBlue;
-					border: 3px solid #374757;
-					padding: 20px;
-					.error {
-						@include width-height(100%, 30px);
-						@include flex(row, flex-start, center);
-						opacity: 1;
-						@include fontSize-fontWeight(14px, 400);
-						color: $error;
-					}
-					.error_hidden {
-						@extend .error;
-						height: 19px;
-						opacity: 0;
-						border: 1px solid white;
-					}
-				}
-			}
-		}
-	}
+  @include width-height(100%, 100vh);
+  @include flex(column, flex-start, center);
+  z-index: 2;
+  position: relative;
+  background: $mainBlue;
+  .inner_container {
+    @include width-height(100%, 100%);
+    @include flex(column, center, center);
+    padding: 0 20px;
+    padding-top: 30px;
+    .form_container {
+      @include width-height(100%, auto);
+      max-width: 500px;
+      @include flex(column, center, center);
+      margin-top: 35px;
+      .fade {
+        @include width-height(100%, auto);
+        .resume_container {
+          display: none;
+        }
+        .form {
+          @include width-height(100%, auto);
+          @include flex(column, center, center);
+          background: $darkBlue;
+          border: 3px solid #374757;
+          padding: 20px;
+          .error {
+            @include width-height(100%, 30px);
+            @include flex(row, flex-start, center);
+            opacity: 1;
+            @include fontSize-fontWeight(14px, 400);
+            color: $error;
+          }
+          .error_hidden {
+            @extend .error;
+            height: 19px;
+            opacity: 0;
+            border: 1px solid white;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (width >= $queryMd) {
-	.container {
-		.inner_container {
-			.form_container {
-				max-width: 600px;
-			}
-		}
-	}
+  .container {
+    .inner_container {
+      .form_container {
+        max-width: 600px;
+      }
+    }
+  }
 }
 
 @media (width >= $queryLg) {
-	.container {
-		margin: 0;
-		.inner_container {
-			.form_container {
-				height: 100%;
-				max-width: auto;
-				display: grid;
-				grid-template-columns: 330px 400px;
-				gap: 20px;
-				.fade {
-					.resume_container {
-						display: block;
-						@include width-height(100%, 520px);
-						@include flex(column, space-around, center);
-						background: $darkBlue;
-						border: 3px solid #374757;
-					}
-				}
-			}
-		}
-	}
+  .container {
+    margin: 0;
+    .inner_container {
+      .form_container {
+        height: 100%;
+        max-width: auto;
+        display: grid;
+        grid-template-columns: 330px 400px;
+        gap: 20px;
+        .fade {
+          .resume_container {
+            display: block;
+            @include width-height(100%, 520px);
+            @include flex(column, space-around, center);
+            background: $darkBlue;
+            border: 3px solid #374757;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (width >= $queryXl) {
-	.container {
-		margin: 0;
-		.inner_container {
-			.form_container {
-				grid-template-columns: 400px 600px;
-				height: 100%;
-				.fade {
-					.resume_container {
-						display: block;
-						@include width-height(100%, 700px);
-						@include flex(column, space-around, center, 20px);
-						background: $darkBlue;
-						border: 3px solid #374757;
-					}
-					.form {
-						height: 700px;
-						justify-content: space-between;
-					}
-				}
-			}
-		}
-	}
+  .container {
+    margin: 0;
+    .inner_container {
+      .form_container {
+        grid-template-columns: 400px 600px;
+        height: 100%;
+        .fade {
+          .resume_container {
+            display: block;
+            @include width-height(100%, 550px);
+            @include flex(column, space-around, center, 10px);
+            background: $darkBlue;
+            border: 3px solid #374757;
+          }
+          .form {
+            height: 550px;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
 }

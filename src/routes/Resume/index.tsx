@@ -33,10 +33,10 @@ const Resume = () => {
   const resume: SummaryProps[] = [
     {
       title: dict("resume.title01"),
-      company: "Notimation",
-      dates: "06/2023 - Actualidad",
+      company: "UTN",
+      dates: "03/2025 - Actualidad",
       description: dict("resume.description01"),
-      badges: [nextjsBadge, typescriptBadge, reduxBadge, sassBadge],
+      // badges: [nextjsBadge, typescriptBadge, reduxBadge, sassBadge],
     },
     {
       title: dict("resume.title02"),

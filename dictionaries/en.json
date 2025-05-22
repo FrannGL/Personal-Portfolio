@@ -1,92 +1,94 @@
 {
-	"dict": {
-		"home": {
-			"initial_text": "I am",
-			"btn01": "See more",
-			"btn02": "Donwload CV",
-			"follow": "Follow me"
-		},
-		"about": {
-			"title": "I am Franco Galluccio",
-			"subtitle": "I am a Full Stack Web Developer",
-			"description01": "I am a highly motivated professional, with demonstrated skills in proactivity, responsibility and teamwork. I stand out for my ability to quickly adapt to new environments and face challenges with creativity and determination. My commitment to excellence leads me to deliver high-quality results and consistently meet deadlines.",
-			"description02": "Additionally, I have strong communication and collaboration skills, allowing me to work effectively with colleagues and clients. I am always willing to learn and contribute positively to the team's success.",
-			"list01": "Name",
-			"list02": "Age",
-			"list03": "Phone",
-			"list04": "Location",
-			"list05": "Website",
-			"list06": "Email",
-			"btn": "Donwload CV"
-		},
-		"titles": {
-			"home": "Home",
-			"about": "About",
-			"services": "Services",
-			"resume": "Resume",
-			"portfolio": "Portfolio",
-			"contact": "Contact"
-		},
-		"services": {
-			"title01": "Creative design",
-			"description01": "Solutions based on creative designs. I transform ideas into captivating visual experiences, combining innovation and aesthetics to capture the client's full attention.",
-			"title02": "Brand",
-			"description02": "I take your brand to new levels, creating distinctive identities that reflect the essence of the business, helping you stand out and connect with your audience in an authentic way.",
-			"title03": "User Interface",
-			"description03": "I improve interaction with elegant and functional user interfaces, designing intuitive experiences that facilitate navigation, ensuring fluidity and attractiveness.",
-			"title04": "User experience",
-			"description04": "I put the user at the center of everything I do. My user experience service focuses on creating smooth, immersive journeys that make users feel valued and understood.",
-			"title05": "Clean code",
-			"description05": "Quality and clarity are the foundation of my code. By offering a clean code service, you can rely on robust, secure and scalable solutions that will drive your project forward in the long term.",
-			"title06": "Quick Support",
-			"description06": "Fast, efficient support is just a click away. My responsibility for potential technical issues ensures you always have the support you need to keep business running."
-		},
-		"portfolio": {
-			"categories": {
-				"all": "All",
-				"frontend": "Frontend",
-				"full": "Full Stack",
-				"mobile": "Mobile App"
-			},
-			"projects": {
-				"description01": "Online store for a brewery, built with React. Includes route navigation, global state management with Context, custom styles with Material UI and adaptable to all screens. Clean and functional design allows customers to explore and buy craft beers with ease.",
-				"description02": "Institutional Landing Page, created with Next.js. It is based on an elegant Figma design adaptable to all screens, using the SASS preprocessor to stylize dynamically. The page offers a fluid and attractive experience, reflecting the professional image of the company.",
-				"description03": "Institutional Landing Page, developed with Next.js and Typescript for greater robustness. The design follows a Figma model and uses SASS for custom styles. This page presents an interactive flow and clearly shows the benefits of the service. ",
-				"description04": "E-commerce platform for a hamburger chain, developed with a Full Stack approach. User and role management, products, carts and other functionalities are part of this project. The backend uses Express.js and MongoDB, while the frontend uses Handlebars for a dynamic design. Special emphasis on layered architecture, which guarantees safe and efficient code.",
-				"description05": "CRM type project to manage users and QR codes related to pet data, where the client will be able to print the QR code on a badge and when scanning it, it will redirect them to a landing page with the data related to their pet. The frontend uses Next.js, Typescript and SASS for a modern design, while the backend is based on Express.js and MongoDB, following a layered architecture for security and efficiency.",
-				"description06": "Mobile app built with React Native and Expo, integrating Redux Toolkit and Redux Toolkit Query for global status and API requests. Firebase handles the database and authentication. React-native is used for notifications. Toast-message. Expo-image-picker makes it easy to upload profile photos. Additionally, Expo-location is used with the Google Platform API for geolocation."
-			}
-		},
-		"resume": {
-			"title01": "Frontend Developer",
-			"description01": "As a Frontend Developer at Notimation, I work on creating attractive and functional user interfaces, implementing reusable components and interacting with servers for data management through APIs. In addition, I have developed custom solutions, collaborating with multidisciplinary teams to deliver high quality products.",
-			"title02": "Full Stack Development Career",
-			"description02": "My path to becoming a Full Stack developer, where I embark on an exciting learning journey with the MERN technology stack: MongoDB, Express.js, React and Node.js. Throughout my course, I also I familiarized you with complementary tools such as Git for version control, Docker for containerization, and cloud-related technologies to deploy your applications. The learning was not only technical, but also collaborative, allowing me to work on team projects, practice agile methodologies. and receive constructive feedback.",
-			"title03": "Bachelor in Natural Sciences",
-			"description03": "During my time in high school, where I completed a bachelor's degree in natural sciences, I had the opportunity to immerse myself in a fascinating world of discovery and learning. This educational approach allowed me to explore topics related to biology, chemistry and physics, expanding my knowledge about the functioning of the natural world and its phenomena."
-		},
-		"contact": {
-			"resume": {
-				"location": "Location",
-				"email": "Email",
-				"phone": "Phone",
-				"website": "Website"
-			},
-			"form": {
-				"name": "Name",
-				"email": "Email",
-				"subject": "Subject",
-				"subject_placeholder": "Job offer",
-				"message": "Message",
-				"message_placeholder": "Your message ...",
-				"btn": "Send message",
-				"loading": "Sending"
-			}
-		},
-		"toast": {
-			"success": "Formulario enviado correctamente",
-			"error_front": "Error al enviar el formulario",
-			"error_back": "Error en el servidor"
-		}
-	}
+  "dict": {
+    "home": {
+      "initial_text": "I am",
+      "btn01": "See more",
+      "btn02": "Donwload CV",
+      "follow": "Follow me"
+    },
+    "about": {
+      "title": "I am Franco Galluccio",
+      "subtitle": "I am a Full Stack Web Developer",
+      "description01": "I am a highly motivated professional, with demonstrated skills in proactivity, responsibility and teamwork. I stand out for my ability to quickly adapt to new environments and face challenges with creativity and determination. My commitment to excellence leads me to deliver high-quality results and consistently meet deadlines.",
+      "description02": "Additionally, I have strong communication and collaboration skills, allowing me to work effectively with colleagues and clients. I am always willing to learn and contribute positively to the team's success.",
+      "list01": "Name",
+      "list02": "Age",
+      "list03": "Phone",
+      "list04": "Location",
+      "list05": "Website",
+      "list06": "Email",
+      "btn": "Donwload CV"
+    },
+    "titles": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "resume": "Resume",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    },
+    "services": {
+      "title01": "Creative design",
+      "description01": "Solutions based on creative designs. I transform ideas into captivating visual experiences, combining innovation and aesthetics to capture the client's full attention.",
+      "title02": "Brand",
+      "description02": "I take your brand to new levels, creating distinctive identities that reflect the essence of the business, helping you stand out and connect with your audience in an authentic way.",
+      "title03": "User Interface",
+      "description03": "I improve interaction with elegant and functional user interfaces, designing intuitive experiences that facilitate navigation, ensuring fluidity and attractiveness.",
+      "title04": "User experience",
+      "description04": "I put the user at the center of everything I do. My user experience service focuses on creating smooth, immersive journeys that make users feel valued and understood.",
+      "title05": "Clean code",
+      "description05": "Quality and clarity are the foundation of my code. By offering a clean code service, you can rely on robust, secure and scalable solutions that will drive your project forward in the long term.",
+      "title06": "Quick Support",
+      "description06": "Fast, efficient support is just a click away. My responsibility for potential technical issues ensures you always have the support you need to keep business running."
+    },
+    "portfolio": {
+      "categories": {
+        "all": "All",
+        "frontend": "Frontend",
+        "full": "Full Stack",
+        "mobile": "Mobile App"
+      },
+      "projects": {
+        "description01": "Online store for a brewery built with React, Context, and Material UI. Fully responsive and user-friendly for browsing and purchasing craft beers.",
+        "description02": "Institutional landing page built with Next.js and SASS, based on a Figma design. Fully responsive with a clean and professional look.",
+        "description03": "Landing page made with Next.js and Typescript, styled with SASS. Offers an interactive layout that highlights key service benefits.",
+        "description04": "Full Stack e-commerce for a burger chain with user, product, and role management. Backend in Express.js and MongoDB using layered architecture.",
+        "description05": "CRM for managing users and QR codes linked to pet data. Scanning a badge QR leads to a custom pet landing. Built with Next.js and Express.js.",
+        "description06": "Mobile app with React Native, Redux Toolkit, and Firebase. Supports geolocation, image upload, authentication, and real-time state management.",
+        "description07": "Business solution to manage critical data and processes. Centralizes financial operations and tracks financing requests in real time.",
+        "description08": "Helpdesk-style tool to manage maintenance tasks. Create, assign, and track orders in real time, with built-in chat between users and staff."
+      }
+    },
+    "resume": {
+      "title01": "Programming Technician",
+      "description01": "Tertiary-level program focused on practical software development, covering programming languages, databases, logic, and agile methodologies.",
+      "title02": "Full Stack Development Career",
+      "description02": "Training with the MERN stack (MongoDB, Express.js, React, Node.js), plus Git, Docker, and cloud tools. Emphasis on teamwork and agile practices.",
+      "title03": "Bachelor in Natural Sciences",
+      "description03": "High school program focused on biology, chemistry, and physics, providing a strong foundation in scientific thinking and natural phenomena."
+    },
+    "contact": {
+      "resume": {
+        "location": "Location",
+        "email": "Email",
+        "phone": "Phone",
+        "website": "Website"
+      },
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "subject_placeholder": "Job offer",
+        "message": "Message",
+        "message_placeholder": "Your message ...",
+        "btn": "Send message",
+        "loading": "Sending"
+      }
+    },
+    "toast": {
+      "success": "Formulario enviado correctamente",
+      "error_front": "Error al enviar el formulario",
+      "error_back": "Error en el servidor"
+    }
+  }
 }
