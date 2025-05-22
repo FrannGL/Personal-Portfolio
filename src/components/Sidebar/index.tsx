@@ -44,9 +44,9 @@ const Sidebar = () => {
           {isOpen ? <ArrowLeft /> : <ArrowRight />}
         </button>
       </Fade>
-      <div className={styles.logo_container}>
+      {/* <div className={styles.logo_container}>
         {isOpen && <Image className={styles.logo} src={logo} alt="Logo" />}
-      </div>
+      </div> */}
       <div
         className={
           isOpen
